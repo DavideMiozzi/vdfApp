@@ -1,0 +1,8 @@
+{
+  "name": "vdfApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "f125a73b"
+}
