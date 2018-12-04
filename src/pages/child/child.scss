@@ -1,0 +1,17 @@
+page-child {
+  .child-avatar {
+    height: 24rem;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .child-features__item, .navigation__buttons { text-align: center; }
+
+  .child-features__item .button { width: 90%; }
+
+  .navigation__buttons .button { width: 100%; }
+
+  .grid { text-align: center; }
+}

@@ -14,3 +14,25 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+ion-icon { color: primary; }
+
+.circular-button {
+  border-radius: 50%;
+  height: 5rem!important;
+  width: 5rem!important;
+}
+
+.circular-button.button-small {
+  height: 3.6rem!important;
+  width: 3.6rem!important;
+}

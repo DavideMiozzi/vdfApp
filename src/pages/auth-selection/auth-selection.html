@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Benvenuti</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <div padding>
+      <button ion-button color="primary" block (click)="goTo('SignupPage')">Registrati</button>
+    </div>
+
+    <div padding>
+      <button ion-button color="primary" block (click)="goTo('LoginPage')">Accedi</button>
+    </div>
+
+    <div padding>
+      <button ion-button color="primary" block (click)="facebookLogin()"><ion-icon name="logo-facebook"></ion-icon> Accedi con Facebook</button>
+    </div>
+
+    <div padding>
+      <button ion-button color="primary" block (click)="googleLogin()"><ion-icon name="logo-googleplus"></ion-icon> Accedi con Google</button>
+    </div>
+
+  </ion-list>
+</ion-content>

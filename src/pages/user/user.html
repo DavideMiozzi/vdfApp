@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>User</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-input type="text" [(ngModel)]="user.name" (ngModelChange)="showSave = true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="email" [(ngModel)]="user.email" (ngModelChange)="showSave = true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Street</ion-label>
+        <ion-input type="text" [(ngModel)]="user.billing_address.street" (ngModelChange)="showSave = true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Number</ion-label>
+        <ion-input type="text" [(ngModel)]="user.billing_address.streetNumber" (ngModelChange)="showSave = true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Zip Code</ion-label>
+        <ion-input type="text" [(ngModel)]="user.billing_address.zipCode" (ngModelChange)="showSave = true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>City</ion-label>
+        <ion-input type="text" [(ngModel)]="user.billing_address.city" (ngModelChange)="showSave = true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Country</ion-label>
+        <ion-input type="text" [(ngModel)]="user.billing_address.countryName" (ngModelChange)="showSave = true"></ion-input>
+      </ion-item>
+
+      <button ion-button item-end [hidden]="!showSave" (click)="saveUser()">Save</button>
+
+    </ion-list>
+
+</ion-content>

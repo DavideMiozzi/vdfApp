@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>I tuoi bambini</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+    <ion-item *ngFor="let child of children" (click)="goToChildPage(child)">
+
+      <ion-avatar item-start>
+        <img src="assets/imgs/{{child.sex}}.png">
+      </ion-avatar>
+      <h2>{{child.name}}</h2>
+
+    </ion-item>
+
+    <ion-item>
+      <button class="circular-button" item-end ion-button icon-only (click)="addChild()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-item>
+
+  </ion-list>
+</ion-content>
