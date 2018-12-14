@@ -7,12 +7,14 @@ import { tap } from 'rxjs/operators';
 
 import { NetworkService } from '../providers';
 
-import { Child } from '../models/child'
+import { Child } from '../models/child';
+import * as Constants from '../constants';
+
 
 @Injectable()
 
 export class ChildService {
-  readonly APIbaseUrl = 'http://localhost:3000/v1/';
+  readonly APIbaseUrl = Constants.API_ENDPOINT_V;
 
   constructor(private http: HttpClient, private storage: Storage, private network: NetworkService) {}
 

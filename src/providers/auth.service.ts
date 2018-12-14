@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import { Facebook } from '@ionic-native/facebook';
 import { GooglePlus } from '@ionic-native/google-plus';
 
-import { UserService } from './user.service'
+import { UserService } from './user.service';
 
 import {
   SignInData,
@@ -18,13 +18,15 @@ import {
   FacebookLoginData,
   GoogleLoginData
 } from '../models/auth';
-import { User } from '../models/user'
-import { Address } from '../models/address'
+import { User } from '../models/user';
+import { Address } from '../models/address';
+
+import * as Constants from '../constants';
 
 @Injectable()
 
 export class AuthService {
-  readonly APIbaseUrl = 'http://localhost:3000/';
+  readonly APIbaseUrl = Constants.API_ENDPOINT;
 
   private authData: AuthData;
 

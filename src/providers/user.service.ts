@@ -7,11 +7,13 @@ import { Observable } from 'rxjs';
 import { NetworkService } from '../providers';
 
 import { User } from '../models/user';
+import * as Constants from '../constants';
+
 
 @Injectable()
 
 export class UserService {
-  readonly APIbaseUrl = 'http://localhost:3000/v1/';
+  readonly APIbaseUrl = Constants.API_ENDPOINT_V;
 
   constructor(private http: HttpClient, private storage: Storage, private network: NetworkService) {}
 
