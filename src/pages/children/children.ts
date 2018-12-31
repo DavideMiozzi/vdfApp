@@ -19,7 +19,10 @@ export class ChildrenPage {
   constructor(public navCtrl: NavController, private childService: ChildService) {}
 
   ionViewWillEnter() {
-    this.childService.getChildren().then((children) => { this.children = children; });
+    this.childService.getChildren().then((children) => { 
+      console.log(children);
+      this.children = children; 
+    });
   }
 
   goToChildPage(child) {

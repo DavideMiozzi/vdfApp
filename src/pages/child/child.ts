@@ -37,7 +37,7 @@ export class ChildPage {
       new ChildFeature('eyeColor', 'azzurri')
     );
     this.child = new Child(this.navParams.get('child'), '', 'boy', this.features);
-    this.avatarFileName = 'boy_occhi_azzurri_capelli_biondi_corti_';
+    this.avatarFileName = 'avatar_m_o_az_c_cobi_p_ro';
   }
   
   ngOnInit() {
@@ -90,10 +90,10 @@ export class ChildPage {
   }
 
   private updateAvatar() {
-    this.avatarFileName = this.child.sex == 'boy' ? 'boy' : 'girl';
-    this.avatarFileName += '_occhi_' + this.child.eyeColor + 
-                            '_capelli_' + this.child.hairColor + 
-                            '_' + this.child.hairShape + '_';
+    this.avatarFileName = this.child.sex == 'boy' ? 'avatar_m' : 'avatar_f';
+    this.avatarFileName += '_o_' + (this.child.eyeColor == 'castani' ? 'ma' : this.child.eyeColor.substr(0, 2)) + 
+                            '_c_' + this.child.hairShape.substr(0, 2) + 
+                            this.child.hairColor.substr(0, 2) + '_p_ro';
   }
 
   goToChildrenPage() { this.navCtrl.pop(); }

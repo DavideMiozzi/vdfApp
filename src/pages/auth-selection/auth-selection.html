@@ -9,13 +9,29 @@
 <ion-content>
   <ion-list>
 
-    <div padding>
-      <button ion-button color="primary" block (click)="goTo('SignupPage')">Registrati</button>
-    </div>
+  <form [formGroup]="authenticationForm" (ngSubmit)="authenticate()">
+    <ion-list>
 
-    <div padding>
+      <ion-item>
+        <ion-label fixed>Email:</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Password:</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+
+      <div padding>
+        <button ion-button color="primary" block>Accedi</button>
+      </div>
+
+    </ion-list>
+  </form>
+
+    <!-- <div padding>
       <button ion-button color="primary" block (click)="goTo('LoginPage')">Accedi</button>
-    </div>
+    </div> -->
 
     <div padding>
       <button ion-button color="primary" block (click)="facebookLogin()"><ion-icon name="logo-facebook"></ion-icon> Accedi con Facebook</button>
@@ -23,6 +39,10 @@
 
     <div padding>
       <button ion-button color="primary" block (click)="googleLogin()"><ion-icon name="logo-googleplus"></ion-icon> Accedi con Google</button>
+    </div>
+
+    <div padding>
+      <button ion-button color="primary" block (click)="goTo('SignupPage')">Registrati</button>
     </div>
 
   </ion-list>
