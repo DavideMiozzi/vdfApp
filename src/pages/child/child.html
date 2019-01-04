@@ -55,28 +55,29 @@
     </ion-item>
 
     <ion-select multiple="false" #hairShapeSelect class="hidden" [(ngModel)]="child.hairShape" (ngModelChange)="saveChild()">
-      <ion-option value="corti">Corti</ion-option>
-      <ion-option value="lunghi">Lunghi</ion-option>
-      <ion-option value="ricci">Ricci</ion-option>
+      <ion-option value="co">Corti</ion-option>
+      <ion-option value="lu">Lunghi</ion-option>
+      <ion-option value="ri">Ricci</ion-option>
     </ion-select>
 
     <ion-select multiple="false" #hairColorSelect class="hidden" [(ngModel)]="child.hairColor" (ngModelChange)="saveChild()">
-      <ion-option value="biondi">Biondi</ion-option>
-      <ion-option value="castani">Castani</ion-option>
-      <ion-option value="neri">Neri</ion-option>
-      <ion-option value="rossi">Rossi</ion-option>
+      <ion-option value="ro">Rossi</ion-option>
+      <ion-option value="ne">Neri</ion-option>
+      <ion-option value="bi">Biondi</ion-option>
+      <ion-option value="ca">Castani</ion-option>
     </ion-select>
 
     <ion-select multiple="false" #skinColorSelect class="hidden" [(ngModel)]="child.skinColor" (ngModelChange)="saveChild()">
-      <ion-option value="bianca">Bianca</ion-option>
-      <ion-option value="nera">Nera</ion-option>
-      <ion-option value="gialla">Gialla</ion-option>
+      <ion-option value="bi">Bianca</ion-option>
+      <ion-option value="ro">Rosa</ion-option>
+      <ion-option value="ne">Nera</ion-option>
     </ion-select>
 
     <ion-select multiple="false" #eyeColorSelect class="hidden" [(ngModel)]="child.eyeColor" (ngModelChange)="saveChild()">
-      <ion-option value="castani">Castani</ion-option>
-      <ion-option value="azzurri">Azzurri</ion-option>
-      <ion-option value="neri">Neri</ion-option>
+      <ion-option value="ne">Neri</ion-option>
+      <ion-option value="ma">Marroni</ion-option>
+      <ion-option value="ve">Verdi</ion-option>
+      <ion-option value="az">Azzurri</ion-option>
     </ion-select>
 
     <ion-item class="navigation__buttons">

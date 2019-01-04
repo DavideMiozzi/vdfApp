@@ -1,0 +1,72 @@
+page-scene {
+}
+
+.scene-wrap, .rotate-device-warning, .scene-wrap .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.scene-wrap { z-index: 10; }
+.rotate-device-warning { z-index: 1000; background-color: aliceblue; display: none; }
+@media all and (orientation : portrait) {
+  .rotate-device-warning { display: block; }
+}
+
+.scene-wrap {
+  .layer {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .bg {
+    z-index: 1;
+  }
+  .cel {
+    z-index: 2;
+  }
+  .txt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Loved by the King', cursive;
+    font-size: 4vh;
+    width: 100%;
+    height: 100%;
+    /*display: none;*/
+  }
+  #ui { z-index: 10000; }
+  .textbox {
+    position: absolute;
+    background-color: rgba(0, 255, 64, 0.1);
+  }
+  .page {
+    width: 40vw;
+    height: 35vh;
+    bottom: 55%;
+    right: 56vw;
+  }
+  .abs_center_middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+  }
+  
+  .abs_middle {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+    -o-transform: translate(0%, -50%);
+    -webkit-transform: translate(0%, -50%);
+  }
+}

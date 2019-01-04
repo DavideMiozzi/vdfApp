@@ -1,60 +1,37 @@
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
+import { HttpClient} from '@angular/common/http';
+import { Storage } from '@ionic/storage';
 
 import { Tale } from '../models/tale'
+
+import { NetworkService } from '../providers';
 
 @Injectable()
 
 export class TaleService {
 
-  constructor() {}
+  readonly APIbaseUrl = 'http://localhost:3000/v1/';
 
-  getTales(): Observable<Tale[]> {
-    let tales = [
-      {
-        id: 1,
-        title: 'La barzelletta del Fantasma Formaggino',
-        sex: 'boy',
-        available: true,
-        purchase_code_ios: '111222333',
-        purchase_code_android: '111222333'
-      },
-      {
-        id: 1,
-        title: 'Tutto ha un prezzo',
-        sex: 'boy',
-        available: false,
-        purchase_code_ios: '111222333',
-        purchase_code_android: '111222333'
-      },
-      {
-        id: 1,
-        title: 'Scalza nella valle dei chiodi',
-        sex: 'girl',
-        available: true,
-        purchase_code_ios: '111222333',
-        purchase_code_android: '111222333'
-      },
-      {
-        id: 1,
-        title: 'Lo scudetto 84/85',
-        sex: 'boy',
-        available: true,
-        purchase_code_ios: '111222333',
-        purchase_code_android: '111222333'
-      },
-      {
-        id: 1,
-        title: 'Una lunga storia',
-        sex: 'girl',
-        available: false,
-        purchase_code_ios: '111222333',
-        purchase_code_android: '111222333'
-      }
-    ];
+  constructor(private http: HttpClient, private storage: Storage) {}
 
-    return Observable.of(tales as Tale[]);
+  getTales(): Promise<Tale[]> {
+    return this.http.get<Tale[]>(this.APIbaseUrl+"tales/")
+    .toPromise()
+    .catch((error) => { 
+      console.log('error retrieving tales from server', error)
+      return []
+    })
+  }
+
+  getTale(taleId): Promise<Tale> {
+    return this.http.get<Tale>(this.APIbaseUrl+"tales/"+taleId)
+    .toPromise()
+    .catch((error) => { 
+      console.log('error retrieving tale from server', error)
+      return null
+    })
   }
 
   talePurchased(tale: Tale): Observable<Tale> {

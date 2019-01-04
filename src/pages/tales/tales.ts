@@ -16,7 +16,6 @@ la prossima cosa da fare è rompere il processo di in-app purchase in fasi e cap
 e nel backend fare creare un endpoint per la conferma acquisto
 */
 export class TalesPage {
-
   tales: Tale[];
   loader;
 
@@ -27,14 +26,22 @@ export class TalesPage {
               public navParams: NavParams,
               public platform: Platform) {
     const env = this
-    this.taleService.getTales().subscribe((tales) => env.tales = tales.filter(tale => tale.sex == env.navParams.get('child').sex));
+    this.taleService.getTales()
+    .then((tales) => {
+      // typescript... tales non sono tales
+      env.tales = []
+      tales.filter(tale => tale.sex == env.navParams.get('child').sex)
+      .forEach((obj) => {
+        let tale = Object.assign(new Tale(), obj)
+        tale.customizeTitle(env.navParams.get('child'))
+        env.tales.push(tale)
+      })
+    })
   }
 
   private goToTalePage(tale: Tale) {
     if (!tale.available) { return; }
-    this.navCtrl.push('TalePage', {
-      tale: tale.id
-    });
+    this.navCtrl.push('TalePage', { tale: tale, child: this.navParams.get('child') });
   }
 
   private initTalePurchase(tale: Tale) {

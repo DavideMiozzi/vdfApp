@@ -13,6 +13,15 @@ export class Child {
     this.child_features = child_features;
   }
 
+  get featureString():string {
+    let featureString = this.sex == "boy" ? "m_" : "f_"
+    featureString += "o_" + this.child_features.filter(feature => feature.feature == 'eyeColor')[0].value
+    featureString += "_c_" + this.child_features.filter(feature => feature.feature == 'hairShape')[0].value
+    featureString += this.child_features.filter(feature => feature.feature == 'hairColor')[0].value
+    featureString += "_p_" + this.child_features.filter(feature => feature.feature == 'skinColor')[0].value
+    return featureString
+  }
+
   get hairColor():string {
     return this.child_features.filter(feature => feature.feature == 'hairColor')[0].value;
   }

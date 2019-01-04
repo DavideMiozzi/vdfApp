@@ -31,10 +31,10 @@ export class ChildPage {
               private toastCtrl: ToastController) {
     this.showSave = false;
     this.features = new Array(
-      new ChildFeature('hairShape', 'corti'),
-      new ChildFeature('hairColor', 'biondi'),
-      new ChildFeature('skinColor', 'bianca'),
-      new ChildFeature('eyeColor', 'azzurri')
+      new ChildFeature('hairShape', 'co'),
+      new ChildFeature('hairColor', 'bi'),
+      new ChildFeature('skinColor', 'bi'),
+      new ChildFeature('eyeColor', 'az')
     );
     this.child = new Child(this.navParams.get('child'), '', 'boy', this.features);
     this.avatarFileName = 'avatar_m_o_az_c_cobi_p_ro';
@@ -90,18 +90,13 @@ export class ChildPage {
   }
 
   private updateAvatar() {
-    this.avatarFileName = this.child.sex == 'boy' ? 'avatar_m' : 'avatar_f';
-    this.avatarFileName += '_o_' + (this.child.eyeColor == 'castani' ? 'ma' : this.child.eyeColor.substr(0, 2)) + 
-                            '_c_' + this.child.hairShape.substr(0, 2) + 
-                            this.child.hairColor.substr(0, 2) + '_p_ro';
+    this.avatarFileName = "avatar_" + this.child.featureString;
   }
 
   goToChildrenPage() { this.navCtrl.pop(); }
 
   goToTalesPage() {
-    this.navCtrl.push('TalesPage', {
-      child: this.child
-    });
+    this.navCtrl.push('TalesPage', { child: this.child });
   }
 
   setSex(sex) {
