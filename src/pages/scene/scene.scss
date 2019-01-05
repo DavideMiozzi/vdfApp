@@ -1,4 +1,12 @@
 page-scene {
+/*  @import "http://www.immercode.com/assets/application-ff9ab57a3f7223375404503c9d7ec23886da7d2a3c4c73c1307c61fd3817e5de.css"; */
+}
+
+@font-face {
+  font-family: 'Loved by the King';
+  src: url('../assets/fonts/loved_by_the_king.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
 .scene-wrap, .rotate-device-warning, .scene-wrap .layer {
