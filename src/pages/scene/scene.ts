@@ -50,15 +50,9 @@ export class ScenePage {
   }
 
   private sceneString(): string {
-
-    //    let taleId = "f" + ("00" + this.tale.id).slice(-3)
-
-
-    let taleId = "f001"
-
-
-    let sceneId = "s" + ("00" + this.sceneNumber).slice(-3)
-    return taleId + '/' + sceneId + '/' + taleId + '_' + sceneId
+    const stringId = this.tale.string_id
+    const sceneId = "s" + ("00" + this.sceneNumber).slice(-3)
+    return stringId + '/' + sceneId + '/' + stringId + '_' + sceneId
   }
 
   backgroundFile(): string {

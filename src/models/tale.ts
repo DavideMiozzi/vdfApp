@@ -3,6 +3,7 @@ import { Scene } from './scene'
 
 export class Tale {
   id: number;
+  string_id: string;
   title: string;
   description: string;
   sex: string;

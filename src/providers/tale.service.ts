@@ -8,11 +8,13 @@ import { Tale } from '../models/tale'
 
 import { NetworkService } from '../providers';
 
+import * as Constants from '../constants';
+
 @Injectable()
 
 export class TaleService {
 
-  readonly APIbaseUrl = 'http://localhost:3000/v1/';
+  readonly APIbaseUrl = Constants.API_ENDPOINT_V;
 
   constructor(private http: HttpClient, private storage: Storage) {}
 
