@@ -39,7 +39,8 @@ export class TalesPage {
     })
   }
 
-  private goToTalePage(tale: Tale) {
+  private goToTalePage(event: Event, tale: Tale) {
+    event.stopPropagation();
     if (!tale.available) { return; }
     this.navCtrl.push('TalePage', { tale: tale, child: this.navParams.get('child') });
   }
@@ -104,7 +105,8 @@ export class TalesPage {
     }
   }
 
-  purchaseTale(tale) {
+  purchaseTale(event: Event, tale) {
+    event.stopPropagation();
     this.loader = this.loadingCtrl.create({ 
       content: 'Completing Transaction'
     });

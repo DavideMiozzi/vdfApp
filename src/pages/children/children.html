@@ -12,17 +12,20 @@
 <ion-content>
   <ion-list>
 
-    <ion-item *ngFor="let child of children" (click)="goToChildPage(child)">
+    <ion-item *ngFor="let child of children" (click)="goToTalesPage($event, child)">
 
       <ion-avatar item-start>
         <img src="assets/imgs/children_avatars/avatar_{{child.features_string}}.png">
       </ion-avatar>
       <h2>{{child.name}}</h2>
 
+      <button class="edit-child" item-end ion-button icon-only (click)="goToChildPage($event, child)">
+        <ion-icon name="create"></ion-icon>
+      </button>
     </ion-item>
 
     <ion-item>
-      <button class="circular-button" item-end ion-button icon-only (click)="addChild()">
+      <button class="circular-button" item-end ion-button icon-only (click)="addChild($event)">
         <ion-icon name="add"></ion-icon>
       </button>
     </ion-item>

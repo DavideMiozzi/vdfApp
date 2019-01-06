@@ -25,12 +25,19 @@ export class ChildrenPage {
     });
   }
 
-  goToChildPage(child) {
+  goToChildPage(event: Event, child) {
+    event.stopPropagation();
     this.navCtrl.push('ChildPage', { child: child.id });
   }
 
-  addChild() {
+  addChild(event: Event) {
+    event.stopPropagation();
     this.navCtrl.push('ChildPage', { child: 0 });
+  }
+
+  goToTalesPage(event: Event, child) {
+    event.stopPropagation();
+    this.navCtrl.push('TalesPage', { child: child });
   }
 
 }

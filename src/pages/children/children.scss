@@ -1,0 +1,13 @@
+.item-md {
+	border-bottom: 1px solid #dedede;
+}
+.list-md .item-block .item-inner, .item-md:last-child {
+	border-bottom: none;
+}
+.item-md ion-avatar ion-img, .item-md ion-avatar img {
+	width: 96px;
+	height: 96px;
+}
+.item-md h2 {
+	font-size: 3.6rem;
+}
