@@ -1,0 +1,28 @@
+.card-title {
+	position: absolute;
+    top: -46px;
+    width: 100%;
+    left: 0;
+    padding: 8px 16px;
+}
+
+ion-card-content {
+	position: relative;
+}
+ion-card img:after {
+    content: ' ';
+    background: rgba(39,62,84,0.82);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+}
+.card-title {
+	    position: absolute;
+    top: -46px;
+    width: 100%;
+    left: 0;
+    padding: 8px 16px;
+}
