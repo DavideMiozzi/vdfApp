@@ -29,7 +29,7 @@ export class ScenePage {
     console.log("Scene number:" + this.sceneNumber);
 
     /* prova css dinamico la stringa jSON andrebbe nel db con la scena */
-    var stile = "{\"font-size\":\""+(4+this.sceneNumber+"vh\"}";
+    var stile = "{\"font-size\":\""+(4+this.sceneNumber)+"vh\"}";
     console.log("stile:" + stile);
     this.scene.style = JSON.parse(stile);
     console.log(this.scene.style);

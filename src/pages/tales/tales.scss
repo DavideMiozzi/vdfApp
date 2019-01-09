@@ -19,10 +19,11 @@ ion-card img:after {
     left: 0;
     display: block;
 }
-.card-title {
-	    position: absolute;
-    top: -46px;
+.card-md {
+    border-radius: 18px;
+    border-width: 9px;
+    border-style: solid;
+    border-color: #26b4d7;
+    margin: 10px 0;
     width: 100%;
-    left: 0;
-    padding: 8px 16px;
 }
