@@ -22,11 +22,17 @@ export class ScenePage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public platform: Platform) {
-    this.sceneNumber = this.navParams.get('sceneNumber')
-    this.featureString = this.navParams.get('featureString')
-    this.tale = this.navParams.get('tale')
-    this.scene = this.tale.scenes.filter(scene => scene.number == this.sceneNumber)[0]
-    console.log("Scene number:" + this.sceneNumber)
+    this.sceneNumber = this.navParams.get('sceneNumber');
+    this.featureString = this.navParams.get('featureString');
+    this.tale = this.navParams.get('tale');
+    this.scene = this.tale.scenes.filter(scene => scene.number == this.sceneNumber)[0];
+    console.log("Scene number:" + this.sceneNumber);
+
+    /* prova css dinamico */
+    var stile = "{\"fontsize\":\""+(4+this.sceneNumber)+"vh\", \"color\":\"\"}";
+    console.log("stile:" + stile);
+    this.scene.style = JSON.parse(stile);
+    console.log(this.scene.style);
   }
 
   ngOnInit() {}
@@ -62,5 +68,9 @@ export class ScenePage {
   childFile(): string {
     return Constants.IMAGES_LOCATION + this.sceneString() + '_' + this.featureString + '.png'
   }
+
+  getSceneStyles(scene) {
+    return scene.style;
+}
 
 }

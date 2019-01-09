@@ -2,7 +2,11 @@
   <div class="scene-wrap" (swipe)="swiped($event)">
     <div class="layer bg" [style.background]="'url(' + backgroundFile() + ')'" [style.backgroundSize]="'cover'"></div>
     <div class="layer cel" [style.background]="'url(' + childFile() + ')'" [style.backgroundSize]="'cover'"></div>
-    <div class="txt"><div class="textbox page">{{scene.text}}</div></div>
+    <div class="txt" [ngStyle]="{'font-size': scene.style.fontsize}">
+    	<div class="textbox page">
+    		{{scene.text}}
+    	</div>
+    </div>
     <div class="layer" id="ui"></div>
   </div>
   <div class="rotate-device-warning"><h2>Ruota lo schermo per visualizzare la pagina</h2></div>
