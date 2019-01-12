@@ -1,7 +1,9 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Bambino</ion-title>
+    <ion-title>
+      <img src="assets/imgs/logo.png" >
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -19,13 +21,13 @@
       <ion-grid>
         <ion-row>
           <ion-col col-2>
-            <button class="circular-button" ion-button icon-only [small]="child.sex == 'girl'" (click)="setSex('boy')">
+            <button class="circular-button boy" ion-button icon-only [small]="child.sex == 'girl'" (click)="setSex('boy')">
               <ion-icon name="male"></ion-icon>
             </button>
           </ion-col>
           <ion-col col-8><div class="child-avatar" [ngStyle]="{ 'background-image': 'url(assets/imgs/children_avatars/'+avatarFileName+'.png)'}"></div></ion-col>
           <ion-col col-2>
-            <button class="circular-button" ion-button icon-only [small]="child.sex == 'boy'" (click)="setSex('girl')">
+            <button class="circular-button girl" ion-button icon-only [small]="child.sex == 'boy'" (click)="setSex('girl')">
               <ion-icon name="female"></ion-icon>
             </button>
           </ion-col>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, Platform } from 'ionic-angular';
 import { InAppPurchase2, IAPProduct } from '@ionic-native/in-app-purchase-2';
 
+import { Child } from '../../models/child';
 import { Tale } from '../../models/tale';
 import { TaleService } from '../../providers';
 
@@ -17,6 +18,7 @@ e nel backend fare creare un endpoint per la conferma acquisto
 */
 export class TalesPage {
   tales: Tale[];
+  child: Child;
   loader;
 
   constructor(public navCtrl: NavController,
@@ -25,16 +27,17 @@ export class TalesPage {
               private store: InAppPurchase2,
               public navParams: NavParams,
               public platform: Platform) {
-    const env = this
+    const env = this;
+    env.child = env.navParams.get('child');
     this.taleService.getTales()
     .then((tales) => {
       // typescript... tales non sono tales
-      env.tales = []
+      env.tales = [];
       tales.filter(tale => tale.sex == env.navParams.get('child').sex)
       .forEach((obj) => {
-        let tale = Object.assign(new Tale(), obj)
-        tale.customizeTitle(env.navParams.get('child'))
-        env.tales.push(tale)
+        let tale = Object.assign(new Tale(), obj);
+        tale.customizeTitle(env.child);
+        env.tales.push(tale);
       })
     })
   }
@@ -42,7 +45,7 @@ export class TalesPage {
   private goToTalePage(event: Event, tale: Tale) {
     event.stopPropagation();
     if (!tale.available) { return; }
-    this.navCtrl.push('TalePage', { tale: tale, child: this.navParams.get('child') });
+    this.navCtrl.push('TalePage', { tale: tale, child: this.child });
   }
 
   private initTalePurchase(tale: Tale) {

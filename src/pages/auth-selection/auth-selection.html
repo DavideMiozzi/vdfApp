@@ -1,13 +1,75 @@
-<ion-header>
+<!-- <ion-header>
 
   <ion-navbar>
     <ion-title>Benvenuti</ion-title>
   </ion-navbar>
 
-</ion-header>
+</ion-header> -->
 
-<ion-content>
-  <ion-list>
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="login-content">
+
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <h2 ion-text class="text-primary">
+        <img src="assets/imgs/logo.png" >
+      </h2>
+    </div>
+
+    <!-- Login form -->
+    <form class="list-form" [formGroup]="authenticationForm" (ngSubmit)="authenticate()">
+
+      <ion-item>
+        <ion-label fixed>
+          <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+          Email:
+        </ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>Password:
+        </ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+
+      <p text-right ion-text color="secondary" tappable (click)="forgotPass()"><strong>Password dimenticata?</strong></p>
+      <button ion-button color="primary" block>Accedi</button>
+    </form>
+
+
+    <div>
+
+      <p text-center ion-text color="secondary">O accedi con:</p>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <button ion-button icon-only block class="btn-facebook" (click)="facebookLogin()">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button icon-only block class="btn-gplus" (click)="googleLogin()">
+              <ion-icon name="logo-googleplus"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span ion-text color="secondary" tappable (click)="goTo('SignupPage')">Nuovo? <strong>Registrati</strong></span>
+    </div>
+
+  </div>
+
+<!--
+   <ion-list>
 
   <form [formGroup]="authenticationForm" (ngSubmit)="authenticate()">
     <ion-list>
@@ -29,9 +91,9 @@
     </ion-list>
   </form>
 
-    <!-- <div padding>
+    <div padding>
       <button ion-button color="primary" block (click)="goTo('LoginPage')">Accedi</button>
-    </div> -->
+    </div>
 
     <div padding>
       <button ion-button color="primary" block (click)="facebookLogin()"><ion-icon name="logo-facebook"></ion-icon> Accedi con Facebook</button>
@@ -46,4 +108,5 @@
     </div>
 
   </ion-list>
+ -->
 </ion-content>

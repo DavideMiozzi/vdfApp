@@ -1,16 +1,19 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar class="cornicetta">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>I tuoi bambini</ion-title>
+    <ion-title>
+      <img src="assets/imgs/logo.png" >
+    </ion-title>
+    
   </ion-navbar>
 
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <ion-list class="with-wave">
 
     <ion-item *ngFor="let child of children" (click)="goToTalesPage($event, child)">
 
@@ -24,11 +27,15 @@
       </button>
     </ion-item>
 
-    <ion-item>
+   <!--  <ion-item>
       <button class="circular-button" item-end ion-button icon-only (click)="addChild($event)">
         <ion-icon name="add"></ion-icon>
       </button>
-    </ion-item>
+    </ion-item> -->
 
   </ion-list>
+
+    <button class="circular-button add-child" item-end ion-button icon-only (click)="addChild($event)">
+      <ion-icon name="add"></ion-icon>
+    </button>
 </ion-content>

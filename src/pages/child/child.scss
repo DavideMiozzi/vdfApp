@@ -14,4 +14,14 @@ page-child {
   .navigation__buttons .button { width: 100%; }
 
   .grid { text-align: center; }
+
+  .text-input-md {
+    font-size: xx-large;
+  }
+  .girl {
+    background: color($colors, girl, base);
+  }
+  .boy {
+    background: color($colors, boy, base);
+  }
 }

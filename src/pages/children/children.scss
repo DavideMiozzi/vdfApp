@@ -1,13 +1,14 @@
-.item-md {
-	border-bottom: 1px solid #dedede;
-}
-.list-md .item-block .item-inner, .item-md:last-child {
-	border-bottom: none;
-}
-.item-md ion-avatar ion-img, .item-md ion-avatar img {
-	width: 96px;
-	height: 96px;
-}
-.item-md h2 {
-	font-size: 3.6rem;
+page-children {
+	.item-md .edit-child {
+	    color: #26b4d7;
+	    background-color: transparent;
+	    font-size: 100%;
+	    -webkit-box-shadow: none;
+	    box-shadow: none;
+	}
+	.add-child {
+		position: absolute;
+		bottom: 15px;
+		right: 15px;
+	}
 }

@@ -53,7 +53,8 @@ export class MyApp {
 
   logout() {
     this.authService.signOut().subscribe(() => {
-      this.nav.setRoot(AuthSelectionPage);
+      this.nav.push("AuthSelectionPage");
+      // this.nav.setRoot(AuthSelectionPage);
     });
   }
 }
