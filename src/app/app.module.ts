@@ -9,6 +9,7 @@ import { Network } from '@ionic-native/network';
 import { Facebook } from '@ionic-native/facebook';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { InAppPurchase2 } from '@ionic-native/in-app-purchase-2';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { MyApp } from './app.component';
@@ -32,7 +33,10 @@ import {
     BrowserModule,
     HttpClientModule,
     IonicStorageModule.forRoot(),
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{
+      scrollPadding: false,
+      scrollAssist: false
+    }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -50,6 +54,8 @@ import {
     GooglePlus,
     Facebook,
     InAppPurchase2,
+    ScreenOrientation,
+
     { provide: HTTP_INTERCEPTORS, useClass: FormatInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: ErrorHandler, useClass: IonicErrorHandler }

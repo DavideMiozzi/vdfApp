@@ -6,23 +6,53 @@
 
 </ion-header>
 
-<ion-content>
-  <form [formGroup]="signupForm" (ngSubmit)="register()">
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="login-content">
+
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <h2 ion-text class="text-primary">
+        <img src="assets/imgs/logo.png" >
+      </h2>
+    </div>
+
+    <!-- Login form -->
+    <form class="list-form" [formGroup]="signupForm" (ngSubmit)="register()">
+
+      <ion-item>
+        <ion-input type="text" formControlName="name" placeholder="Nome"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="email" formControlName="email" placeholder="Email"></ion-input>
+        <ion-icon name="mail" item-right class="text-primary"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="password" formControlName="password" placeholder="Password"></ion-input>
+        <ion-icon name="lock" item-right class="text-primary"></ion-icon>
+      </ion-item>
+
+      <button ion-button color="primary" block margin-top>Registrati</button>
+    </form>
+
+  </div>
+
+<!--   <form [formGroup]="signupForm" (ngSubmit)="register()">
     <ion-list>
 
       <ion-item>
-        <ion-label fixed>Nome:</ion-label>
-        <ion-input type="text" formControlName="name"></ion-input>
+        <ion-input type="text" formControlName="name" placeholder="Nome"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label fixed>Email:</ion-label>
-        <ion-input type="email" formControlName="email"></ion-input>
+        <ion-input type="email" formControlName="email" placeholder="Email"></ion-input>
+        <ion-icon name="mail" item-right class="text-primary"></ion-icon>
       </ion-item>
 
       <ion-item>
-        <ion-label fixed>Password</ion-label>
-        <ion-input type="password" formControlName="password"></ion-input>
+        <ion-input type="password" formControlName="password" placeholder="Password"></ion-input>
+        <ion-icon name="lock" item-right class="text-primary"></ion-icon>
       </ion-item>
 
       <div padding>
@@ -30,5 +60,5 @@
       </div>
 
     </ion-list>
-  </form>
+  </form> -->
 </ion-content>

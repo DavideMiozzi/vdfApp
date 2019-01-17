@@ -68,6 +68,7 @@ ion-navbar ion-title {
 ion-navbar ion-title img {
 	width: 128px;
 }
+
 .item-md {
 	color: color($colors, primary, base) !important;
 }
@@ -138,6 +139,12 @@ ion-list.with-wave {
           	padding: 5px;
             color: color($colors, primary);
           }
+
+          ion-icon {
+          	margin: 11px 0 10px;
+          	width: 24px;
+		    text-align: center;
+          }
         }
       }
 
@@ -149,13 +156,64 @@ ion-list.with-wave {
 }
 
 .btn-facebook {
-  background-color: #3B5999;
+  background-color: color($colors, facebook);
 }
 
 .btn-twitter {
-  background-color: #00ACEE;
+  background-color: color($colors, twitter);
 }
 
 .btn-gplus {
-  background-color: #E04006
+  background-color: color($colors, gplus);
+}
+
+// Animate CSS
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  animation-duration: 2s;
+}
+
+.animated.flipOutX,
+.animated.flipOutY,
+.animated.bounceIn,
+.animated.bounceOut {
+  animation-duration: .75s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInDown {
+  animation-name: fadeInDown;
 }

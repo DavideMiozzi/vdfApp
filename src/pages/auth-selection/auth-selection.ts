@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, AlertController } from 'ionic-angular';
+import { IonicPage, LoadingController, NavController, AlertController } from 'ionic-angular';
 import { FormGroup, FormControl } from '@angular/forms';
 
 
@@ -14,7 +14,7 @@ import { AuthService } from '../../providers/auth.service';
 })
 export class AuthSelectionPage {
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController, private auth: AuthService) {}
+  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public alertCtrl: AlertController, private auth: AuthService) {}
 
   goTo(page) {
     this.navCtrl.push(page);
@@ -43,9 +43,17 @@ export class AuthSelectionPage {
   }
 
   authenticate() {
+    let loader = this.loadingCtrl.create();
+    loader.present();
     this.auth.signIn(<SignInData>this.authenticationForm.value).subscribe(
-      success => this.navCtrl.setRoot('ChildrenPage'),
-      err => this.authGoneWrong()
+      success => {
+        loader.dismiss();
+        this.navCtrl.setRoot('ChildrenPage');
+      },
+      err => {
+        loader.dismiss();
+        this.authGoneWrong();
+      },
     );
   }
 

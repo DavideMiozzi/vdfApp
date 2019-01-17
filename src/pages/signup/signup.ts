@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, LoadingController, NavController } from 'ionic-angular';
 import { FormGroup, FormControl } from '@angular/forms';
 
 import { RegisterData } from '../../models/auth';
@@ -18,12 +18,20 @@ export class SignupPage {
     password: new FormControl('')
   });
 
-  constructor(public navCtrl: NavController, private auth: AuthService) {}
+  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, private auth: AuthService) {}
 
   register() {
+    let loader = this.loadingCtrl.create();
+    loader.present();
     this.auth.registerAccount(<RegisterData>this.signupForm.value).subscribe(
-      success => this.navCtrl.setRoot('ChildrenPage'),
-      err => console.log("TODO: handle error in registration")
+      success => {
+        loader.dismiss();
+        this.navCtrl.setRoot('ChildrenPage');
+      },
+      err => {
+        loader.dismiss();
+        console.log("TODO: handle error in registration");
+       }
     );
   }
 }

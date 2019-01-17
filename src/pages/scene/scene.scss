@@ -22,9 +22,9 @@ page-scene {
 
 .scene-wrap { z-index: 10; }
 .rotate-device-warning { z-index: 1000; background-color: aliceblue; display: none; }
-@media all and (orientation : portrait) {
-  .rotate-device-warning { display: block; }
-}
+// @media all and (orientation : portrait) {
+//   .rotate-device-warning { display: block; }
+// }
 
 .scene-wrap {
   .layer {

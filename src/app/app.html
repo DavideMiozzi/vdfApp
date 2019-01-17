@@ -7,10 +7,10 @@
   </ion-header>
   <ion-content>
     <ion-list>
-      <ion-item (click)="openPage('UserPage')">
+      <ion-item menuClose (click)="openPage('UserPage')">
         <ion-icon name="person"></ion-icon> Profile
       </ion-item>
-      <button ion-item (click)="logout()">
+      <button ion-item menuClose (click)="logout()">
         <ion-icon name="exit"></ion-icon> Logout
       </button>
     </ion-list>
