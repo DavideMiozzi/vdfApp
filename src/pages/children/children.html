@@ -26,16 +26,11 @@
         <ion-icon name="create"></ion-icon>
       </button>
     </ion-item>
-
-   <!--  <ion-item>
-      <button class="circular-button" item-end ion-button icon-only (click)="addChild($event)">
-        <ion-icon name="add"></ion-icon>
-      </button>
-    </ion-item> -->
-
   </ion-list>
 
-    <button class="circular-button add-child" item-end ion-button icon-only (click)="addChild($event)">
-      <ion-icon name="add"></ion-icon>
-    </button>
+    <ion-fab bottom right>
+        <button class="circular-button" ion-fab (click)="addChild($event)">
+          <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-fab>
 </ion-content>

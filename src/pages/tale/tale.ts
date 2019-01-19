@@ -49,6 +49,7 @@ export class TalePage {
     if (!this.taleReady) { return; }
     this.navCtrl.push('ScenePage', {
       tale: this.tale,
+      child: this.child,
       sceneNumber: 1,
       featureString: this.child.featureString
     });

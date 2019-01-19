@@ -1,13 +1,25 @@
 <ion-content>
-  <div class="scene-wrap" (swipe)="swiped($event)">
+  <div class="scene-wrap" (swipe)="swiped($event)" >
     <div class="layer bg" [style.background]="'url(' + backgroundFile() + ')'" [style.backgroundSize]="'cover'"></div>
     <div class="layer cel" [style.background]="'url(' + childFile() + ')'" [style.backgroundSize]="'cover'"></div>
-    <div class="txt" [ngStyle]="scene.style">
-    	<div class="textbox page">
+    <div class="txt">
+    	<div class="textbox page" [ngStyle]="scene.style">
     		{{scene.text}}
     	</div>
     </div>
     <div class="layer" id="ui"></div>
   </div>
   <div class="rotate-device-warning"><h2>Ruota lo schermo per visualizzare la pagina</h2></div>
+ 
+  <ion-fab bottom right>
+    <button ion-fab mini class="discreto">
+      <img src="assets/imgs/logo_icona.png" >
+    </button>
+    <ion-fab-list side="left">
+      <button ion-fab (click)="buyTale()" ><ion-icon name="book"></ion-icon></button>
+      <button ion-fab (click)="shareTale($event, 'facebook')" ><ion-icon name="logo-facebook"></ion-icon></button>
+      <button ion-fab (click)="shareTale($event, 'twitter')" ><ion-icon name="logo-twitter"></ion-icon></button>
+      <button ion-fab (click)="goToTalesPage()" ><ion-icon name="undo"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
