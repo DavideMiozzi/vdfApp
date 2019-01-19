@@ -25,7 +25,9 @@ export class TalePage {
               public navParams: NavParams,
               public platform: Platform,
               private taleService: TaleService) {
-    this.child = this.navParams.get('child')
+
+    const child = this.navParams.get('child')
+    this.child = new Child(child.id, child.name, child.sex, child.child_features)
     this.tale =  this.navParams.get('tale')
     this.taleReady = false
 

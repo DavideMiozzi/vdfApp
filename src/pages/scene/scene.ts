@@ -34,7 +34,6 @@ export class ScenePage {
     console.log(this.tale);
     console.log(this.scene);
 
-  
     /* prova css dinamico la stringa jSON andrebbe nel db con la scena */
     var stile = "{\"font-size\":\""+(4+this.sceneNumber)+"vh\"}";
     console.log("stile:" + stile);
@@ -43,24 +42,14 @@ export class ScenePage {
   }
 
   ionViewDidLoad() {
-    if (!this.platform.is('mobileweb') && !this.platform.is('core')){
-      // check for current orientation
-      // alert(this.screenOrientation.type);
-
-      // set orientation to landscape
+    if (!this.platform.is('mobileweb') && !this.platform.is('core')) {
+      // force orientation to landscape
       this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE);
-      // alert(this.screenOrientation.type);
-
-      // allow user rotate of app
-      this.screenOrientation.unlock();
-
-      // checks for orientation changes
-      this.screenOrientation.onChange().subscribe(
-        () => {
-            console.log("Orientation Changed: "+this.screenOrientation.type);
-        }
-      );
     }
+  }
+
+  ionViewDidLeave() {
+    if (!this.platform.is('mobileweb') && !this.platform.is('core')) { this.screenOrientation.unlock(); }
   }
 
   ngOnInit() {}
