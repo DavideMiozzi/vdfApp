@@ -14,7 +14,7 @@ export const SCENE_TEST_CSS = [
     "{\"width\": \"43vmax\",\"top\": \"2vmax\",\"left\": \"2vmax\",\"font-size\": \"3vmax\",\"text-align\": \"left\"}",
     "{\"width\": \"43vmax\",\"top\": \"38vmax\",\"left\": \"2vmax\",\"font-size\": \"3vmax\",\"text-align\": \"left\"}",
     "{\"width\": \"43vmax\",\"top\": \"2vmax\",\"right\": \"2vmax\",\"font-size\": \"3vmax\",\"text-align\": \"right\"}",
-    "{\"width\": \"43vmax\",\"top\": \"2vmax\",\"right\": \"2vmax\",\"font-size\": \"2.9vmax\";\"text-align\": \"riht\";}",
+    "{\"width\": \"43vmax\",\"top\": \"2vmax\",\"right\": \"2vmax\",\"font-size\": \"2.9vmax\",\"text-align\": \"right\"}",
     "{\"width\": \"43vmax\",\"top\": \"2vmax\",\"right\": \"2vmax\",\"font-size\": \"3vmax\",\"text-align\": \"right\"}",
     "{\"width\": \"43vmax\",\"top\": \"2vmax\",\"left\": \"2vmax\",\"font-size\": \"3vmax\",\"text-align\": \"left\"}",
     "{\"width\": \"38vmax\",\"top\": \"4vmax\",\"left\": \"11vmax\",\"font-size\": \"3vmax\",\"text-align\": \"left\"}",
