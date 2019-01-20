@@ -31,7 +31,7 @@
     "@ionic/pro": "2.0.3",
     "@ionic/storage": "2.2.0",
     "cc.fovea.cordova.purchase": "^7.2.6",
-    "cordova-android": "~6.3.0",
+    "cordova-android": "^6.3.0",
     "cordova-browser": "5.0.4",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-facebook4": "^4.1.0",

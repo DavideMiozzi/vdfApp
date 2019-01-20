@@ -28,9 +28,9 @@ page-scene {
 
 .scene-wrap {
   .layer {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-position: center!important;
+    background-size: cover!important;
+    background-repeat: no-repeat!important;
   }
   .bg {
     z-index: 1;

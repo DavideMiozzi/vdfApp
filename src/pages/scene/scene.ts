@@ -39,12 +39,6 @@ export class ScenePage {
     console.log("Scene number:" + this.sceneNumber);
     console.log(this.tale);
     console.log(this.scene);
-
-    /* prova css dinamico la stringa jSON andrebbe nel db con la scena */
-    var stile = Constants.SCENE_TEST_CSS[this.sceneNumber];
-    console.log("stile:" + stile);
-    this.scene.style = JSON.parse(stile);
-    console.log(this.scene.style);
   }
 
   ionViewDidLoad() {

@@ -9,6 +9,7 @@ import { Tale } from '../models/tale'
 import { NetworkService } from '../providers';
 
 import * as Constants from '../constants';
+import { Scene } from '../models/scene';
 
 @Injectable()
 
@@ -30,6 +31,16 @@ export class TaleService {
   getTale(taleId): Promise<Tale> {
     return this.http.get<Tale>(this.APIbaseUrl+"tales/"+taleId)
     .toPromise()
+    .then(obj => {
+      let tale = Object.assign(new Tale(), obj)
+      tale.scenes = []
+      obj.scenes.forEach( scene => {
+        scene.style = JSON.parse(scene.style)
+        let sceneObj = new Scene(scene.text, scene.number, scene.style)
+        tale.scenes.push(sceneObj)
+      })
+      return tale
+    })
     .catch((error) => { 
       console.log('error retrieving tale from server', error)
       return null
