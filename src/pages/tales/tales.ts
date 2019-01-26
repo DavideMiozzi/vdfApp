@@ -48,6 +48,11 @@ export class TalesPage {
     this.navCtrl.push('TalePage', { tale: tale, child: this.child });
   }
 
+  private goToChildPage() {
+    event.stopPropagation();
+    this.navCtrl.push('ChildPage', { child: this.child });
+  }
+
   private initTalePurchase(tale: Tale) {
     let productId;
     try {

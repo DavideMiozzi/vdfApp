@@ -102,6 +102,6 @@ export class ScenePage {
 
   goToTalesPage() {
     event.stopPropagation();
-    console.log("torno alle favole!!!!");
+    this.navCtrl.push('TalesPage', { child: this.child });
   }
 }
