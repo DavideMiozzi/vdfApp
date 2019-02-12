@@ -41,10 +41,12 @@ ion-icon { color: primary; }
   width: 3.6rem!important;
 }
 
-ion-navbar {
+.navbar {
     -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 4px;
+    min-height: 56px;
 }
 .toolbar-background-md {
 	background-color: #fff;
@@ -57,16 +59,44 @@ ion-navbar {
 	background-image: url("../assets/imgs/cornicetta.png");
 	height: 10px;
 }
-ion-navbar button {
+.navbar button {
 	position: absolute !important;
 	color: color($colors, primary, base) !important;
 	z-index: 100;
 }
-ion-navbar ion-title {
+.navbar ion-title {
     text-align: center;
 }
-ion-navbar ion-title img {
+.navbar ion-title img {
 	width: 128px;
+}
+
+button.btn-menu ion-icon {
+  padding: 0 6px;
+  font-size: 2.4rem;
+}
+button.btn-clear {
+  color: color($colors, primary, base);
+  background-color: transparent;
+  font-size: 100%;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  &:hover {
+    background-color: transparent !important;
+  }
+}
+.navbar button.btn-menu {
+  margin: 6px 6px 0 6px;
+  padding: 0 2px;
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  min-width: 44px;
+}
+
+ion-navbar .btn-menu {
+  display: inline-block !important;
 }
 
 .item-md {

@@ -74,18 +74,18 @@ export class ScenePage {
     }
   }
 
-  private sceneString(): string {
+  private sceneString(image_path): string {
     const stringId = this.tale.string_id
     const sceneId = "s" + ("00" + this.sceneNumber).slice(-3)
-    return stringId + '/' + sceneId + '/' + stringId + '_' + sceneId
+    return stringId + '/' + image_path + sceneId + '/' + stringId + '_' + sceneId
   }
 
   backgroundFile(): string {
-    return Constants.IMAGES_LOCATION + this.sceneString() + '_sfondo.png'
+    return Constants.IMAGES_LOCATION + this.sceneString(Constants.IMAGES_APP_PATH) + '_sfondo.png'
   }
 
   childFile(): string {
-    return Constants.IMAGES_LOCATION + this.sceneString() + '_' + this.featureString + '.png'
+    return Constants.IMAGES_LOCATION + this.sceneString(Constants.IMAGES_APP_PATH) + '_' + this.featureString + '.png'
   }
 
   getSceneStyles(scene) {

@@ -1,13 +1,12 @@
 <ion-header>
 
-  <ion-navbar class="cornicetta">
-    <button ion-button menuToggle>
+  <ion-navbar hideBackButton class="navbar cornicetta">
+    <button ion-button ion-only menuToggle class="btn-menu">
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
       <img src="assets/imgs/logo.png" >
     </ion-title>
-    
   </ion-navbar>
 
 </ion-header>
@@ -22,7 +21,7 @@
       </ion-avatar>
       <h2>{{child.name}}</h2>
 
-      <button class="edit-child" item-end ion-button icon-only (click)="goToChildPage($event, child)">
+      <button class="edit-child btn-clear" item-end ion-button icon-only (click)="goToChildPage($event, child)">
         <ion-icon name="create"></ion-icon>
       </button>
     </ion-item>

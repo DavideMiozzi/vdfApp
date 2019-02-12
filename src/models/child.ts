@@ -4,6 +4,7 @@ export class Child {
   id: number;
   name: string;
   sex: string;
+  features_string: string;
   child_features: ChildFeature[];
 
   constructor(id, name, sex, child_features) {

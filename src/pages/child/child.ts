@@ -36,18 +36,21 @@ export class ChildPage {
       new ChildFeature('skinColor', 'bi'),
       new ChildFeature('eyeColor', 'az')
     );
-    this.child = new Child(this.navParams.get('child'), '', 'boy', this.features);
-    this.avatarFileName = 'avatar_m_o_az_c_cobi_p_ro';
+    const child = this.navParams.get('child');
+    this.child = new Child(child.id, child.name, child.sex, child.child_features);
+    this.updateAvatar();
   }
   
   ngOnInit() {
-    if (this.navParams.get('child') != 0) {
-      this.childService.getChild(this.navParams.get('child')).then((child) => {
-        this.child.id = child.id;
-        this.child.name = child.name;
-        this.child.sex = child.sex;
-        this.child.child_features = child.child_features;
-        this.updateAvatar();
+    if (this.child.id != 0) {
+      this.childService.getChild(this.child.id).then((child) => {
+        console.log("OOO");
+        console.log(child);
+        // this.child.id = child.id;
+        // this.child.name = child.name;
+        // this.child.sex = child.sex;
+        // this.child.child_features = child.child_features;
+        // this.updateAvatar();
       });
     }
   }
@@ -93,7 +96,10 @@ export class ChildPage {
     this.avatarFileName = "avatar_" + this.child.featureString;
   }
 
-  goToChildrenPage() { this.navCtrl.pop(); }
+  private goToChildrenPage() { 
+    event.stopPropagation();
+    this.navCtrl.push('ChildrenPage', { child: this.child });
+  }
 
   goToTalesPage() {
     this.navCtrl.push('TalesPage', { child: this.child });

@@ -1,10 +1,14 @@
 page-children {
-	.item-md .edit-child {
+	.edit-child {
 	    color: #26b4d7;
 	    background-color: transparent;
-	    font-size: 100%;
+	    font-size: 100% !important;
 	    -webkit-box-shadow: none;
-	    box-shadow: none;
+		box-shadow: none;
+		
+		&:hover {
+			background-color: transparent !important;
+		}
 	}
 	.add-child {
 		position: absolute;

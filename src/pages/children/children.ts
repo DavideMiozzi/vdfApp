@@ -27,7 +27,7 @@ export class ChildrenPage {
 
   goToChildPage(event: Event, child) {
     event.stopPropagation();
-    this.navCtrl.push('ChildPage', { child: child.id });
+    this.navCtrl.push('ChildPage', { child: child });
   }
 
   addChild(event: Event) {

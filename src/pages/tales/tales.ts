@@ -5,12 +5,13 @@ import { InAppPurchase2, IAPProduct } from '@ionic-native/in-app-purchase-2';
 import { Child } from '../../models/child';
 import { Tale } from '../../models/tale';
 import { TaleService } from '../../providers';
+import { ChildService } from '../../providers';
 
 @IonicPage()
 @Component({
   selector: 'page-tales',
   templateUrl: 'tales.html',
-  providers: [ TaleService ]
+  providers: [ TaleService, ChildService ]
 })
 /*
 la prossima cosa da fare è rompere il processo di in-app purchase in fasi e capire come gestirle in termini di pagine/wait splash
@@ -24,6 +25,7 @@ export class TalesPage {
   constructor(public navCtrl: NavController,
               public loadingCtrl: LoadingController,
               private taleService: TaleService,
+              private childService: TaleService,
               private store: InAppPurchase2,
               public navParams: NavParams,
               public platform: Platform) {
@@ -33,7 +35,7 @@ export class TalesPage {
     .then((tales) => {
       // typescript... tales non sono tales
       env.tales = [];
-      tales.filter(tale => tale.sex == env.navParams.get('child').sex)
+      tales.filter(tale => tale.sex == env.child.sex)
       .forEach((obj) => {
         let tale = Object.assign(new Tale(), obj);
         tale.customizeTitle(env.child);
@@ -46,6 +48,11 @@ export class TalesPage {
     event.stopPropagation();
     if (!tale.available) { return; }
     this.navCtrl.push('TalePage', { tale: tale, child: this.child });
+  }
+
+  private goToChildrenPage() { 
+    event.stopPropagation();
+    this.navCtrl.push('ChildrenPage', { child: this.child });
   }
 
   private goToChildPage() {

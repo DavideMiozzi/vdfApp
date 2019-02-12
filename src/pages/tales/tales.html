@@ -1,6 +1,6 @@
-<ion-header>
-  <button ion-button ion-only (click)="goToChildPage()">
-    <ion-icon name="people"></ion-icon>
+<ion-header class="navbar cornicetta">
+  <button ion-button ion-only class="btn-menu btn-clear" (click)="goToChildrenPage()">
+    <ion-icon name="arrow-back"></ion-icon>
   </button>
   <ion-title>
     <img src="assets/imgs/logo.png" >
@@ -10,7 +10,7 @@
 <ion-content>
 
   <ion-card *ngFor="let tale of tales">
-    <img src="assets/imgs/preview-storia.png" (click)="goToTalePage($event, tale)"/>
+    <img src="{{tale.preview_image}}" (click)="goToTalePage($event, tale)"/>
     <ion-fab right top style="top:15px;right: 15px;">
       <button ion-fab mini>
         <ion-icon name="book"></ion-icon>
