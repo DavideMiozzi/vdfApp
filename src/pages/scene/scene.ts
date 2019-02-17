@@ -81,7 +81,7 @@ export class ScenePage {
   }
 
   backgroundFile(): string {
-    return Constants.IMAGES_LOCATION + this.sceneString(Constants.IMAGES_APP_PATH) + '_sfondo.png'
+    return Constants.IMAGES_LOCATION + this.sceneString(Constants.IMAGES_APP_PATH) + '_sfondo.jpg'
   }
 
   childFile(): string {

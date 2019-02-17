@@ -23,8 +23,29 @@ export class Tale {
   }
 
   customizeScenes(child: Child) {
-    this.scenes.forEach(scene => scene.text = scene.text.replace(/{{name}}/g, child.name));
-  }
 
-  get
+    this.scenes.forEach(scene => scene.text = scene.text.replace(/{{name}}/g, child.name))
+    let feat = child.child_features.filter(feature => feature.feature == 'grandPaName')[0]
+    let val = ""
+    if (feat) {
+      val = child.child_features.filter(feature => feature.feature == 'grandPaName')[0].value
+    }
+    this.scenes.forEach(scene => scene.text = scene.text.replace(/{{grandPaName}}/g, val))
+
+    feat = child.child_features.filter(feature => feature.feature == 'grandMaName')[0]
+    if (feat) {
+      val = child.child_features.filter(feature => feature.feature == 'grandMaName')[0].value
+    } else {
+      val = ""
+    }
+    this.scenes.forEach(scene => scene.text = scene.text.replace(/{{grandMaName}}/g, val))
+
+    feat = child.child_features.filter(feature => feature.feature == 'dogName')[0]
+    if (feat) {
+      val = child.child_features.filter(feature => feature.feature == 'dogName')[0].value
+    } else {
+      val = "Bobo"
+    }
+    this.scenes.forEach(scene => scene.text = scene.text.replace(/{{dogName}}/g, val))
+  }
 }
