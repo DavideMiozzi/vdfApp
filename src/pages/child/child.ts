@@ -19,6 +19,9 @@ export class ChildPage {
   features: ChildFeature[];
   showSave: boolean;
   avatarFileName: string;
+  dogName: string;
+  grandPaName: string;
+  grandMaName: string;
 
   @ViewChild('hairShapeSelect') hairShapeSelectRef: Select;
   @ViewChild('hairColorSelect') hairColorSelectRef: Select;
@@ -38,6 +41,25 @@ export class ChildPage {
     );
     const child = this.navParams.get('child');
     this.child = new Child(child.id, child.name, child.sex, child.child_features);
+
+    this.dogName = ""
+    if (child.child_features.filter(feature => feature.feature == 'dogName')[0] != null)
+    {
+      this.dogName = child.child_features.filter(feature => feature.feature == 'dogName')[0].value
+    }
+
+    this.grandMaName = ""
+    if (child.child_features.filter(feature => feature.feature == 'grandMaName')[0] != null)
+    {
+      this.grandMaName = child.child_features.filter(feature => feature.feature == 'grandMaName')[0].value
+    }
+
+    this.grandPaName = ""
+    if (child.child_features.filter(feature => feature.feature == 'grandPaName')[0] != null)
+    {
+      this.grandPaName = child.child_features.filter(feature => feature.feature == 'grandPaName')[0].value
+    }
+
     this.updateAvatar();
   }
   
@@ -60,6 +82,30 @@ export class ChildPage {
   }
   
   private saveChild() {
+    if (this.child.child_features.filter(feature => feature.feature == 'dogName')[0] != null)
+    {
+      this.child.child_features.filter(feature => feature.feature == 'dogName')[0].value = this.dogName
+    } else {
+      let newFeat = new ChildFeature('dogName', this.dogName)
+      this.child.child_features.push(newFeat)
+    }
+
+    if (this.child.child_features.filter(feature => feature.feature == 'grandMaName')[0] != null)
+    {
+      this.child.child_features.filter(feature => feature.feature == 'grandMaName')[0].value = this.grandMaName
+    } else {
+      let newFeat = new ChildFeature('grandMaName', this.grandMaName)
+      this.child.child_features.push(newFeat)
+    }
+
+    if (this.child.child_features.filter(feature => feature.feature == 'grandPaName')[0] != null)
+    {
+      this.child.child_features.filter(feature => feature.feature == 'grandPaName')[0].value = this.grandPaName
+    } else {
+      let newFeat = new ChildFeature('grandPaName', this.grandPaName)
+      this.child.child_features.push(newFeat)
+    }
+
     (this.child.id == 0) ? this.createChild() : this.updateChild();
   }
 

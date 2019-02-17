@@ -82,6 +82,24 @@
       <ion-option value="az">Azzurri</ion-option>
     </ion-select>
 
+    <ion-item>
+      <ion-label>Nome Cane:</ion-label>
+      <ion-input [(ngModel)]="dogName" (ngModelChange)="showSave = true"></ion-input>
+      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">Salva</button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Nome Nonno:</ion-label>
+      <ion-input [(ngModel)]="grandPaName" (ngModelChange)="showSave = true"></ion-input>
+      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">Salva</button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Nome Nonna:</ion-label>
+      <ion-input [(ngModel)]="grandMaName" (ngModelChange)="showSave = true"></ion-input>
+      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">Salva</button>
+    </ion-item>
+
     <ion-item class="navigation__buttons">
       <ion-grid>
         <ion-row>
