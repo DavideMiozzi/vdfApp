@@ -11,7 +11,7 @@
 
   <ion-card *ngFor="let tale of tales">
     <img src="{{tale.preview_image}}" (click)="goToTalePage($event, tale)"/>
-    <ion-fab right top style="top:15px;right: 15px;">
+    <ion-fab right top>
       <button ion-fab mini>
         <ion-icon name="book"></ion-icon>
       </button>
