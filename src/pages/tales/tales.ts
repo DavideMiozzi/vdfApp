@@ -20,6 +20,7 @@ e nel backend fare creare un endpoint per la conferma acquisto
 export class TalesPage {
   tales: Tale[];
   child: Child;
+  selectedTale: Tale;
   loader;
 
   constructor(public navCtrl: NavController,
@@ -47,7 +48,24 @@ export class TalesPage {
   private goToTalePage(event: Event, tale: Tale) {
     event.stopPropagation();
     if (!tale.available) { return; }
-    this.navCtrl.push('TalePage', { tale: tale, child: this.child });
+    // this.navCtrl.push('TalePage', { tale: tale, child: this.child });
+
+    const env = this
+    this.taleService.getTale(tale.id)
+    .then((obj) => {
+		// typescript... tale non è tales
+		let tale = Object.assign(new Tale(), obj);
+		tale.customizeTitle(env.child);
+		tale.customizeScenes(env.child);
+		env.selectedTale = tale
+		this.navCtrl.push('ScenePage', {
+			tale: env.selectedTale,
+			child: env.child,
+			sceneNumber: 1,
+			featureString: env.child.features_string
+		  });
+	})
+
   }
 
   private goToChildrenPage() { 

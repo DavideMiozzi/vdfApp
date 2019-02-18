@@ -8,45 +8,34 @@
 </ion-header>
 
 <ion-content>
-
-  <ion-card *ngFor="let tale of tales">
-    <img src="{{tale.preview_image}}" (click)="goToTalePage($event, tale)"/>
-    <ion-fab right top>
-      <button ion-fab mini>
-        <ion-icon name="book"></ion-icon>
-      </button>
-    </ion-fab>
-    <ion-card-content (click)="goToTalePage($event, tale)">
-      <ion-card-title>
-        {{tale.title}}
-      </ion-card-title>
-      <p>{{tale.description}}</p>
-    </ion-card-content>
-    <!-- <ion-row>
-      <ion-col>
-        in un secondo momento mettiamo quanti l'hanno letta
-        <button ion-button icon-start clear small>
-          <ion-icon name="thumbs-up"></ion-icon>
-          <div>12 Likes</div>
-        </button>
-      </ion-col>
-      <ion-col>
-        <button ion-button icon-start clear>
-          <ion-icon name="book"></ion-icon>
-          <div>Stampa libro</div>
-        </button>
-      </ion-col>
-      <ion-col center text-center>
-        <button ion-button icon-start clear *ngIf="tale.available" >
-          <ion-icon name="arrow-forward" item-end></ion-icon>
-        </button>
-        <button ion-button item-end *ngIf="!tale.available" (click)="purchaseTale($event, tale)">
-          <div>Acquista</div>
-        </button>
-      </ion-col>
-    </ion-row> -->
-  </ion-card>
-</ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-sm *ngFor="let tale of tales">
+          <!-- <ion-card [ngClass]="{'locked' : (!tale.available), 'unlocked' : (tale.available)}"> -->
+          <ion-card class="locked">
+            <img src="{{tale.preview_image}}" (click)="goToTalePage($event, tale)"/>
+            <ion-fab right top>
+              <button ion-fab mini>
+                <ion-icon name="book"></ion-icon>
+              </button>
+            </ion-fab>
+            <ion-fab center middle slot="fixed">
+              <button ion-fab mini (click)="purchaseTale($event, tale)">
+                <ion-icon name="lock"></ion-icon>
+              </button>
+            </ion-fab>
+            <ion-card-content (click)="goToTalePage($event, tale)">
+              <ion-card-title>
+                {{tale.title}}
+              </ion-card-title>
+              <p>{{tale.description}}</p>
+            </ion-card-content>
+          </ion-card>
+  
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
 
 
 
