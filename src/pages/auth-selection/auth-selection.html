@@ -20,23 +20,23 @@
     <form class="list-form" [formGroup]="authenticationForm" (ngSubmit)="authenticate()">
 
       <ion-item>
-        <ion-input type="email" formControlName="email" placeholder="Email"></ion-input>
+        <ion-input type="email" formControlName="email" placeholder="{{ 'auth_Email' | translate }}"></ion-input>
         <ion-icon name="mail" item-right class="text-primary"></ion-icon>
       </ion-item>
 
       <ion-item>
-        <ion-input type="password" formControlName="password" placeholder="Password"></ion-input>
+        <ion-input type="password" formControlName="password" placeholder="{{ 'auth_Password' | translate }}"></ion-input>
         <ion-icon name="lock" item-right class="text-primary"></ion-icon>
       </ion-item>
 
-      <p text-right ion-text color="secondary" tappable (click)="goTo('RecoveryPage')"><strong>Password dimenticata?</strong></p>
-      <button ion-button color="primary" block>Accedi</button>
+      <p text-right ion-text color="secondary" tappable (click)="goTo('RecoveryPage')"><strong>{{ 'auth_PasswordDimenticata' | translate }}</strong></p>
+      <button ion-button color="primary" block>{{ 'auth_Accedi' | translate }}</button>
     </form>
 
 
     <div>
 
-      <p text-center ion-text color="secondary">O accedi con:</p>
+      <p text-center ion-text color="secondary">{{ 'auth_OAccediCon' | translate }}:</p>
 
       <ion-grid>
         <ion-row>
@@ -58,7 +58,7 @@
 
     <!-- Other links -->
     <div text-center margin-top>
-      <span ion-text color="secondary" tappable (click)="goTo('SignupPage')">Nuovo? <strong>Registrati</strong></span>
+      <span ion-text color="secondary" tappable (click)="goTo('SignupPage')">{{ 'auth_Nuovo' | translate }} <strong>{{ 'auth_Registrati' | translate }}</strong></span>
     </div>
 
   </div>

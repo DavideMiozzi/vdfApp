@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { ScenePage } from './scene';
 
@@ -8,7 +9,8 @@ import { ScenePage } from './scene';
     ScenePage,
   ],
   imports: [
-    IonicPageModule.forChild(ScenePage)
+    IonicPageModule.forChild(ScenePage),
+    TranslateModule
   ],
   exports: [
     ScenePage

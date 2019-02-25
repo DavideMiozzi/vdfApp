@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { TranslateService } from '@ngx-translate/core';
 
 import { Tale } from '../../models/tale';
 import { Child } from '../../models/child';
@@ -28,7 +29,8 @@ export class ScenePage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public platform: Platform,
-              screenOrientation: ScreenOrientation) {
+              screenOrientation: ScreenOrientation,
+              public translateService:TranslateService) {
     this.screenOrientation = screenOrientation;
     this.unlockOrientation = true;
     this.sceneNumber = this.navParams.get('sceneNumber');

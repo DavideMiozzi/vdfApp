@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Select } from 'ionic-angular';
+import { TranslateService } from '@ngx-translate/core';
 
 import { ToastController } from 'ionic-angular';
 
@@ -31,7 +32,8 @@ export class ChildPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private childService: ChildService,
-              private toastCtrl: ToastController) {
+              private toastCtrl: ToastController, 
+              public translate:TranslateService) {
     this.showSave = false;
     this.features = new Array(
       new ChildFeature('hairShape', 'co'),
@@ -59,6 +61,12 @@ export class ChildPage {
     {
       this.grandPaName = child.child_features.filter(feature => feature.feature == 'grandPaName')[0].value
     }
+
+    // translate.get('HELLO').subscribe(
+    //   value => {
+    //     alert(value);
+    //   }
+    // )
 
     this.updateAvatar();
   }

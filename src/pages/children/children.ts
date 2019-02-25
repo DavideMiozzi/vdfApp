@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
+import { TranslateService } from '@ngx-translate/core';
 
 import { Child } from '../../models/child';
 import { ChildService } from '../../providers';
@@ -9,14 +10,15 @@ import { ChildService } from '../../providers';
 @Component({
   selector: 'page-children',
   templateUrl: 'children.html',
-  providers: [ ChildService ]
+  providers: [ ChildService ],
 })
 
 export class ChildrenPage {
 
   children: Child[];
 
-  constructor(public navCtrl: NavController, private childService: ChildService) {}
+  constructor(public navCtrl: NavController, private childService: ChildService, public translateService:TranslateService) {
+  }
 
   ionViewWillEnter() {
     this.childService.getChildren().then((children) => { 

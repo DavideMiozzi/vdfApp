@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Select } from 'ionic-angular';
+import { TranslateService } from '@ngx-translate/core';
 
 import { ToastController } from 'ionic-angular';
 
@@ -22,7 +23,8 @@ export class UserPage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private userService: UserService,
-    private toastCtrl: ToastController) {
+    private toastCtrl: ToastController, 
+    public translate:TranslateService) {
       this.user = new User
       this.user.name = ""
       this.user.billing_address = new Address
@@ -56,5 +58,10 @@ export class UserPage {
       this.showSavedToast();
       this.showSave = false;
     });
+  }
+
+  private goToChildrenPage() { 
+    event.stopPropagation();
+    this.navCtrl.push('ChildrenPage', { });
   }
 }

@@ -10,7 +10,9 @@ import { Facebook } from '@ionic-native/facebook';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { InAppPurchase2 } from '@ionic-native/in-app-purchase-2';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { MyApp } from './app.component';
 
@@ -25,6 +27,10 @@ import {
         TaleService
       } from '../providers';
 
+export function setTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
 @NgModule({
   declarations: [
     MyApp
@@ -37,6 +43,14 @@ import {
       scrollPadding: false,
       scrollAssist: false
     }),
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (setTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -59,6 +73,8 @@ import {
     { provide: HTTP_INTERCEPTORS, useClass: FormatInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: ErrorHandler, useClass: IonicErrorHandler }
-  ]
+  ],
+
+  exports: [ TranslateModule]
 })
 export class AppModule {}

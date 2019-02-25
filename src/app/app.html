@@ -8,10 +8,10 @@
   <ion-content>
     <ion-list>
       <ion-item menuClose (click)="openPage('UserPage')">
-        <ion-icon name="person"></ion-icon> Profile
+        <ion-icon name="person"></ion-icon> {{ "Profilo" | translate }}
       </ion-item>
       <button ion-item menuClose (click)="logout()">
-        <ion-icon name="exit"></ion-icon> Logout
+        <ion-icon name="exit"></ion-icon> {{ "Esci" | translate }}
       </button>
     </ion-list>
   </ion-content>

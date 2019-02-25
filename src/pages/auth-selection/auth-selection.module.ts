@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { AuthSelectionPage } from './auth-selection';
 
@@ -8,7 +9,8 @@ import { AuthSelectionPage } from './auth-selection';
     AuthSelectionPage,
   ],
   imports: [
-    IonicPageModule.forChild(AuthSelectionPage)
+    IonicPageModule.forChild(AuthSelectionPage),
+    TranslateModule
   ],
   exports: [
     AuthSelectionPage

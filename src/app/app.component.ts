@@ -3,6 +3,8 @@ import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Storage } from '@ionic/storage';
+import { TranslateService } from '@ngx-translate/core';
+import { Globalization } from '@ionic-native/globalization/ngx';
 
 import { NetworkService, AuthService } from '../providers';
 import { AuthSelectionPage } from '../pages/auth-selection/auth-selection';
@@ -22,8 +24,18 @@ export class MyApp {
               splashScreen: SplashScreen,
               network: NetworkService,
               private authService: AuthService,
-              private storage: Storage
+              private storage: Storage, 
+              translate: TranslateService,
+              private globalization: Globalization
               ) {
+                this.globalization.getPreferredLanguage()
+                .then(res => console.log(res))
+                .catch(e => console.log(e));
+    translate.setDefaultLang('it');
+    this.globalization.getPreferredLanguage()
+    .then(res => console.log(res))
+    .catch(e => console.log(e));
+    
     platform.ready().then(() => {
 
       statusBar.styleDefault();

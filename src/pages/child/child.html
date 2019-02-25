@@ -12,9 +12,9 @@
  
   <ion-list>
     <ion-item>
-      <ion-label>Nome:</ion-label>
+      <ion-label color="primary" stacked>{{ "Nome" | translate }}</ion-label>
       <ion-input [(ngModel)]="child.name" (ngModelChange)="showSave = true"></ion-input>
-      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">Salva</button>
+      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
     </ion-item>
  
     <ion-item>
@@ -39,75 +39,76 @@
       <ion-grid>
         <ion-row>
           <ion-col col-6>
-            <button ion-button (click)="openHairShapeSelect()">Forma capelli</button>
+            <button ion-button (click)="openHairShapeSelect()">{{ "Forma capelli" | translate }}</button>
           </ion-col>
           <ion-col col-6>
-            <button ion-button (click)="openHairColorSelect()">Colore capelli</button>
+            <button ion-button (click)="openHairColorSelect()">{{ "Colore capelli" | translate }}</button>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col col-6>
-            <button ion-button (click)="openSkinColorSelect()">Colore pelle</button>
+            <button ion-button (click)="openSkinColorSelect()">{{ "Colore pelle" | translate }}</button>
           </ion-col>
           <ion-col col-6>
-            <button ion-button (click)="openEyeColorSelect()">Colore occhi</button>
+            <button ion-button (click)="openEyeColorSelect()">{{ "Colore occhi" | translate }}</button>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
 
     <ion-select multiple="false" #hairShapeSelect class="hidden" [(ngModel)]="child.hairShape" (ngModelChange)="saveChild()">
-      <ion-option value="co">Corti</ion-option>
-      <ion-option value="lu">Lunghi</ion-option>
-      <ion-option value="ri">Ricci</ion-option>
+      <ion-option value="co">{{ "ca_Corti" | translate }}</ion-option>
+      <ion-option value="lu">{{ "ca_Lunghi" | translate }}</ion-option>
+      <ion-option value="ri">{{ "ca_Ricci" | translate }}</ion-option>
     </ion-select>
 
     <ion-select multiple="false" #hairColorSelect class="hidden" [(ngModel)]="child.hairColor" (ngModelChange)="saveChild()">
-      <ion-option value="ro">Rossi</ion-option>
-      <ion-option value="ne">Neri</ion-option>
-      <ion-option value="bi">Biondi</ion-option>
-      <ion-option value="ca">Castani</ion-option>
+      <ion-option value="ro">{{ "ca_Rossi" | translate }}</ion-option>
+      <ion-option value="ne">{{ "ca_Neri" | translate }}</ion-option>
+      <ion-option value="bi">{{ "ca_Biondi" | translate }}</ion-option>
+      <ion-option value="ca">{{ "ca_Castani" | translate }}</ion-option>
     </ion-select>
 
     <ion-select multiple="false" #skinColorSelect class="hidden" [(ngModel)]="child.skinColor" (ngModelChange)="saveChild()">
-      <ion-option value="bi">Bianca</ion-option>
-      <ion-option value="ro">Rosa</ion-option>
-      <ion-option value="ne">Nera</ion-option>
+      <ion-option value="bi">{{ "pe_Bianca" | translate }}</ion-option>
+      <ion-option value="ro">{{ "pe_Rosa" | translate }}</ion-option>
+      <ion-option value="ne">{{ "pe_Nera" | translate }}</ion-option>
     </ion-select>
 
     <ion-select multiple="false" #eyeColorSelect class="hidden" [(ngModel)]="child.eyeColor" (ngModelChange)="saveChild()">
-      <ion-option value="ne">Neri</ion-option>
-      <ion-option value="ma">Marroni</ion-option>
-      <ion-option value="ve">Verdi</ion-option>
-      <ion-option value="az">Azzurri</ion-option>
+      <ion-option value="ne">{{ "o_Neri" | translate }}</ion-option>
+      <ion-option value="ma">{{ "o_Marroni" | translate }}</ion-option>
+      <ion-option value="ve">{{ "o_Verdi" | translate }}</ion-option>
+      <ion-option value="az">{{ "o_Azzurri" | translate }}</ion-option>
     </ion-select>
 
+
     <ion-item>
-      <ion-label>Nome Cane:</ion-label>
+      <ion-label color="primary" stacked>{{ "Nome Cane" | translate }}:</ion-label>
       <ion-input [(ngModel)]="dogName" (ngModelChange)="showSave = true"></ion-input>
-      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">Salva</button>
+      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
     </ion-item>
 
     <ion-item>
-      <ion-label>Nome Nonno:</ion-label>
+      <ion-label color="primary" stacked>{{ "Nome Nonno" | translate }}:</ion-label>
       <ion-input [(ngModel)]="grandPaName" (ngModelChange)="showSave = true"></ion-input>
-      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">Salva</button>
+      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
     </ion-item>
 
     <ion-item>
-      <ion-label>Nome Nonna:</ion-label>
+      <ion-label color="primary" stacked>{{ "Nome Nonna" | translate }}:</ion-label>
       <ion-input [(ngModel)]="grandMaName" (ngModelChange)="showSave = true"></ion-input>
-      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">Salva</button>
+      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
     </ion-item>
 
     <ion-item class="navigation__buttons">
       <ion-grid>
         <ion-row>
           <ion-col col-6>
-            <button ion-button (click)="goToChildrenPage()">Bambini</button>
+            <button ion-button (click)="goToChildrenPage()">{{ "Bambini" | translate }}</button>
           </ion-col>
           <ion-col col-6 [hidden]="child.id == 0">
-            <button ion-button (click)="goToTalesPage()">Favole</button>
+            <button ion-button (click)="goToTalesPage()">{{ "Favole" | translate }}</button>
           </ion-col>
         </ion-row>
       </ion-grid>

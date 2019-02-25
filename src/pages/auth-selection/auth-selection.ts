@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, LoadingController, NavController, AlertController } from 'ionic-angular';
 import { FormGroup, FormControl } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 
 import { SignInData } from '../../models/auth';
@@ -14,7 +15,11 @@ import { AuthService } from '../../providers/auth.service';
 })
 export class AuthSelectionPage {
 
-  constructor(public navCtrl: NavController, public loadingCtrl: LoadingController, public alertCtrl: AlertController, private auth: AuthService) {}
+  constructor(public navCtrl: NavController, 
+              public loadingCtrl: LoadingController, 
+              public alertCtrl: AlertController, 
+              private auth: AuthService, 
+              public translate:TranslateService) {}
 
   goTo(page) {
     this.navCtrl.push(page);
