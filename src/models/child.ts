@@ -54,4 +54,26 @@ export class Child {
   set hairShape(hairShape:string) {
     this.child_features.filter(feature => feature.feature == 'hairShape')[0].value = hairShape;
   }
+
+  public static getRandomChild() {
+    const _sexArray = [ 'boy', 'girl' ];
+    const _hairShapeArray = [ 'co', 'lu', 'ri' ];
+    const _hairColorArray = [ 'ro', 'ne', 'bi', 'ca' ];
+    const _skinColorArray = [ 'bi', 'ro', 'ne' ];
+    const _eyeColorArray = [ 'ne', 'ma', 've', 'az' ];
+
+    var _sex = _sexArray[Math.floor(Math.random()*_sexArray.length)];
+
+    var _features = new Array(
+      new ChildFeature('hairShape', _hairShapeArray[Math.floor(Math.random()*_hairShapeArray.length)] ),
+      new ChildFeature('hairColor', _hairColorArray[Math.floor(Math.random()*_hairColorArray.length)] ),
+      new ChildFeature('skinColor', _skinColorArray[Math.floor(Math.random()*_skinColorArray.length)] ),
+      new ChildFeature('eyeColor', _eyeColorArray[Math.floor(Math.random()*_eyeColorArray.length)] ),
+      new ChildFeature('dogName', ''),
+      new ChildFeature('grandMaName', ''),
+      new ChildFeature('grandPaName', '')
+    );
+
+    return new Child(0, '', _sex, _features);
+  }
 }

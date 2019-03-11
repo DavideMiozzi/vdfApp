@@ -13,6 +13,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+// import { Globalization } from '@ionic-native/globalization';
 
 import { MyApp } from './app.component';
 
@@ -69,6 +70,7 @@ export function setTranslateLoader(http: HttpClient) {
     Facebook,
     InAppPurchase2,
     ScreenOrientation,
+    // Globalization,
 
     { provide: HTTP_INTERCEPTORS, useClass: FormatInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

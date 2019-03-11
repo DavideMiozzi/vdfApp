@@ -39,27 +39,35 @@ export class ChildPage {
       new ChildFeature('hairShape', 'co'),
       new ChildFeature('hairColor', 'bi'),
       new ChildFeature('skinColor', 'bi'),
-      new ChildFeature('eyeColor', 'az')
+      new ChildFeature('eyeColor', 'az'),
+      new ChildFeature('dogName', ''),
+      new ChildFeature('grandMaName', ''),
+      new ChildFeature('grandPaName', '')
     );
     const child = this.navParams.get('child');
-    this.child = new Child(child.id, child.name, child.sex, child.child_features);
+    if (child == 0) {
+      console.log("nuovo");
+      this.child = Child.getRandomChild();
+    } else {
+      this.child = new Child(child.id, child.name, child.sex, child.child_features);
+    }
 
     this.dogName = ""
-    if (child.child_features.filter(feature => feature.feature == 'dogName')[0] != null)
+    if (this.child.child_features.filter(feature => feature.feature == 'dogName')[0] != null)
     {
-      this.dogName = child.child_features.filter(feature => feature.feature == 'dogName')[0].value
+      this.dogName = this.child.child_features.filter(feature => feature.feature == 'dogName')[0].value
     }
 
     this.grandMaName = ""
-    if (child.child_features.filter(feature => feature.feature == 'grandMaName')[0] != null)
+    if (this.child.child_features.filter(feature => feature.feature == 'grandMaName')[0] != null)
     {
-      this.grandMaName = child.child_features.filter(feature => feature.feature == 'grandMaName')[0].value
+      this.grandMaName = this.child.child_features.filter(feature => feature.feature == 'grandMaName')[0].value
     }
 
     this.grandPaName = ""
-    if (child.child_features.filter(feature => feature.feature == 'grandPaName')[0] != null)
+    if (this.child.child_features.filter(feature => feature.feature == 'grandPaName')[0] != null)
     {
-      this.grandPaName = child.child_features.filter(feature => feature.feature == 'grandPaName')[0].value
+      this.grandPaName = this.child.child_features.filter(feature => feature.feature == 'grandPaName')[0].value
     }
 
     // translate.get('HELLO').subscribe(
