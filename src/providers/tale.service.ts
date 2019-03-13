@@ -35,9 +35,12 @@ export class TaleService {
       let tale = Object.assign(new Tale(), obj)
       tale.scenes = []
       obj.scenes.forEach( scene => {
-        scene.style = JSON.parse(scene.style)
-        let sceneObj = new Scene(scene.text, scene.number, scene.style)
-        tale.scenes.push(sceneObj)
+        if (scene.style.substring(0, 1) == "{") /*++++++++++++ PEZZA I DATI VANNO SISTEMATI SU SERVER */
+          scene.style = JSON.parse(scene.style);
+        else
+          scene.style = JSON.parse("{"+scene.style+"}");
+        let sceneObj = new Scene(scene.text, scene.number, scene.style);
+        tale.scenes.push(sceneObj);
       })
       return tale
     })

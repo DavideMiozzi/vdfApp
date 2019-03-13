@@ -1,9 +1,14 @@
+ion-content {
+    .grid {
+        padding: 0;
+    }
+}
 ion-card {
     border-radius: 18px !important;
     border-width: 9px;
     border-style: solid;
     border-color: #26b4d7;
-    margin: 10px 0 !important;
+    margin: 10px 0 0 !important;
     width: 100% !important;
     position: relative;
 
@@ -19,15 +24,13 @@ ion-card {
     }
 
     .card-title {
-        position: absolute;
-        top: -46px;
         width: 100%;
-        left: 0;
-        padding: 8px 16px;
+        padding: 0;
     }
 
     ion-card-content {
         position: relative;
+        padding: 0px 16px !important;
     }
 
     &.locked:after {

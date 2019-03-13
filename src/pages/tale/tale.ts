@@ -32,12 +32,12 @@ export class TalePage {
     this.taleReady = false
 
     const env = this
-    this.taleService.getTale(this.navParams.get('tale').id)
+    this.taleService.getTale(this.tale.id)
     .then((obj) => {
       // typescript... tale non è tales
       let tale = Object.assign(new Tale(), obj)
-      tale.customizeTitle(env.navParams.get('child'))
-      tale.customizeScenes(env.navParams.get('child'))
+      tale.customizeTitle(this.child)
+      tale.customizeScenes(this.child)
       env.tale = tale
       this.taleReady = true
     })

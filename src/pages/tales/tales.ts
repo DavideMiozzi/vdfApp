@@ -53,6 +53,8 @@ export class TalesPage {
     const env = this
     this.taleService.getTale(tale.id)
     .then((obj) => {
+      console.log("obj");
+      console.log(obj);
 		// typescript... tale non è tales
 		let tale = Object.assign(new Tale(), obj);
 		tale.customizeTitle(env.child);

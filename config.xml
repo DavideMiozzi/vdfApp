@@ -97,4 +97,5 @@
         <variable name="BILLING_KEY" value="987654321" />
     </plugin>
     <plugin name="cordova-plugin-globalization" spec="1.11.0" />
+    <plugin name="cordova-plugin-geolocation" spec="4.0.1" />
 </widget>
