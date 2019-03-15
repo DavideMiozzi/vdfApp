@@ -95,7 +95,8 @@ export class ScenePage {
   }
 
   buyTale() {
-    console.log("Compro il libro!!!!");
+    event.stopPropagation();
+    this.navCtrl.push('BuyAdd2cartPage', { tale: this.tale, child: this.child });
   }
 
   shareTale(event: Event, social_network) {

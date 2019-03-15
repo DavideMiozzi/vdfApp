@@ -181,4 +181,9 @@ export class TalesPage {
       this.loader.dismiss();
     }
   }
+
+  buyTale(tale) {
+    event.stopPropagation();
+    this.navCtrl.push('BuyAdd2cartPage', { tale: tale, child: this.child });
+  }
 }
