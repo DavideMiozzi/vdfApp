@@ -16,6 +16,12 @@
       <ion-input [(ngModel)]="child.name" (ngModelChange)="showSave = true"></ion-input>
       <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
     </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>{{ "Data di nascita" | translate }}</ion-label>
+      <ion-datetime displayFormat="MM DD YYYY" [(ngModel)]="birthday" (ngModelChange)="showSave = true"></ion-datetime>
+      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
+    </ion-item>
  
     <ion-item>
       <ion-grid>
@@ -82,6 +88,23 @@
       <ion-option value="az">{{ "o_Azzurri" | translate }}</ion-option>
     </ion-select>
 
+    <ion-item>
+      <ion-label color="primary" stacked>{{ "Nome Papà" | translate }}:</ion-label>
+      <ion-input [(ngModel)]="dadName" (ngModelChange)="showSave = true"></ion-input>
+      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>{{ "Nome Mamma" | translate }}:</ion-label>
+      <ion-input [(ngModel)]="momName" (ngModelChange)="showSave = true"></ion-input>
+      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" stacked>{{ "Nome Amico/a del cuore" | translate }}:</ion-label>
+      <ion-input [(ngModel)]="bestFriendName" (ngModelChange)="showSave = true"></ion-input>
+      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
+    </ion-item>
 
     <ion-item>
       <ion-label color="primary" stacked>{{ "Nome Cane" | translate }}:</ion-label>

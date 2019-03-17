@@ -40,6 +40,30 @@ export class Tale {
     }
     this.scenes.forEach(scene => scene.text = scene.text.replace(/{{grandMaName}}/g, val))
 
+    feat = child.child_features.filter(feature => feature.feature == 'dadName')[0]
+    if (feat) {
+      val = child.child_features.filter(feature => feature.feature == 'dadName')[0].value
+    } else {
+      val = ""
+    }
+    this.scenes.forEach(scene => scene.text = scene.text.replace(/{{dadName}}/g, val))
+
+    feat = child.child_features.filter(feature => feature.feature == 'momName')[0]
+    if (feat) {
+      val = child.child_features.filter(feature => feature.feature == 'momName')[0].value
+    } else {
+      val = ""
+    }
+    this.scenes.forEach(scene => scene.text = scene.text.replace(/{{momName}}/g, val))
+
+    feat = child.child_features.filter(feature => feature.feature == 'bestFriendName')[0]
+    if (feat) {
+      val = child.child_features.filter(feature => feature.feature == 'bestFriendName')[0].value
+    } else {
+      val = ""
+    }
+    this.scenes.forEach(scene => scene.text = scene.text.replace(/{{bestFriendName}}/g, val))
+
     feat = child.child_features.filter(feature => feature.feature == 'dogName')[0]
     if (feat) {
       val = child.child_features.filter(feature => feature.feature == 'dogName')[0].value

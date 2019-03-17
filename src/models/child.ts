@@ -69,9 +69,13 @@ export class Child {
       new ChildFeature('hairColor', _hairColorArray[Math.floor(Math.random()*_hairColorArray.length)] ),
       new ChildFeature('skinColor', _skinColorArray[Math.floor(Math.random()*_skinColorArray.length)] ),
       new ChildFeature('eyeColor', _eyeColorArray[Math.floor(Math.random()*_eyeColorArray.length)] ),
+      new ChildFeature('dadName', ''),
+      new ChildFeature('momName', ''),
+      new ChildFeature('bestFriendName', ''),
       new ChildFeature('dogName', ''),
       new ChildFeature('grandMaName', ''),
-      new ChildFeature('grandPaName', '')
+      new ChildFeature('grandPaName', ''),
+      new ChildFeature('birthday', '')
     );
 
     return new Child(0, '', _sex, _features);

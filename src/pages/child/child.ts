@@ -20,9 +20,13 @@ export class ChildPage {
   features: ChildFeature[];
   showSave: boolean;
   avatarFileName: string;
+  dadName: string;
+  momName: string;
+  bestFriendName: string;
   dogName: string;
   grandPaName: string;
   grandMaName: string;
+  birthday: string;
 
   @ViewChild('hairShapeSelect') hairShapeSelectRef: Select;
   @ViewChild('hairColorSelect') hairColorSelectRef: Select;
@@ -40,9 +44,13 @@ export class ChildPage {
       new ChildFeature('hairColor', 'bi'),
       new ChildFeature('skinColor', 'bi'),
       new ChildFeature('eyeColor', 'az'),
+      new ChildFeature('dadName', ''),
+      new ChildFeature('momName', ''),
+      new ChildFeature('bestFriendName', ''),
       new ChildFeature('dogName', ''),
       new ChildFeature('grandMaName', ''),
-      new ChildFeature('grandPaName', '')
+      new ChildFeature('grandPaName', ''),
+      new ChildFeature('birthday', ''),
     );
     const child = this.navParams.get('child');
     if (child == 0) {
@@ -50,6 +58,24 @@ export class ChildPage {
       this.child = Child.getRandomChild();
     } else {
       this.child = new Child(child.id, child.name, child.sex, child.child_features);
+    }
+
+    this.dadName = ""
+    if (this.child.child_features.filter(feature => feature.feature == 'dadName')[0] != null)
+    {
+      this.dadName = this.child.child_features.filter(feature => feature.feature == 'dadName')[0].value
+    }
+
+    this.momName = ""
+    if (this.child.child_features.filter(feature => feature.feature == 'momName')[0] != null)
+    {
+      this.momName = this.child.child_features.filter(feature => feature.feature == 'momName')[0].value
+    }
+
+    this.bestFriendName = ""
+    if (this.child.child_features.filter(feature => feature.feature == 'bestFriendName')[0] != null)
+    {
+      this.bestFriendName = this.child.child_features.filter(feature => feature.feature == 'bestFriendName')[0].value
     }
 
     this.dogName = ""
@@ -69,6 +95,13 @@ export class ChildPage {
     {
       this.grandPaName = this.child.child_features.filter(feature => feature.feature == 'grandPaName')[0].value
     }
+
+    this.birthday = ""
+    if (this.child.child_features.filter(feature => feature.feature == 'birthday')[0] != null)
+    {
+      this.birthday = this.child.child_features.filter(feature => feature.feature == 'birthday')[0].value
+    }
+
 
     // translate.get('HELLO').subscribe(
     //   value => {
@@ -98,6 +131,30 @@ export class ChildPage {
   }
   
   private saveChild() {
+    if (this.child.child_features.filter(feature => feature.feature == 'dadName')[0] != null)
+    {
+      this.child.child_features.filter(feature => feature.feature == 'dadName')[0].value = this.dadName
+    } else {
+      let newFeat = new ChildFeature('dadName', this.dadName)
+      this.child.child_features.push(newFeat)
+    }
+
+    if (this.child.child_features.filter(feature => feature.feature == 'momName')[0] != null)
+    {
+      this.child.child_features.filter(feature => feature.feature == 'momName')[0].value = this.momName
+    } else {
+      let newFeat = new ChildFeature('momName', this.momName)
+      this.child.child_features.push(newFeat)
+    }
+
+    if (this.child.child_features.filter(feature => feature.feature == 'bestFriendName')[0] != null)
+    {
+      this.child.child_features.filter(feature => feature.feature == 'bestFriendName')[0].value = this.bestFriendName
+    } else {
+      let newFeat = new ChildFeature('bestFriendName', this.bestFriendName)
+      this.child.child_features.push(newFeat)
+    }
+
     if (this.child.child_features.filter(feature => feature.feature == 'dogName')[0] != null)
     {
       this.child.child_features.filter(feature => feature.feature == 'dogName')[0].value = this.dogName
@@ -119,6 +176,14 @@ export class ChildPage {
       this.child.child_features.filter(feature => feature.feature == 'grandPaName')[0].value = this.grandPaName
     } else {
       let newFeat = new ChildFeature('grandPaName', this.grandPaName)
+      this.child.child_features.push(newFeat)
+    }
+
+    if (this.child.child_features.filter(feature => feature.feature == 'birthday')[0] != null)
+    {
+      this.child.child_features.filter(feature => feature.feature == 'birthday')[0].value = this.birthday
+    } else {
+      let newFeat = new ChildFeature('birthday', this.birthday)
       this.child.child_features.push(newFeat)
     }
 
