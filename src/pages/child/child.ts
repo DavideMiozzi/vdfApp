@@ -44,12 +44,12 @@ export class ChildPage {
       new ChildFeature('hairColor', 'bi'),
       new ChildFeature('skinColor', 'bi'),
       new ChildFeature('eyeColor', 'az'),
-      new ChildFeature('dadName', ''),
-      new ChildFeature('momName', ''),
-      new ChildFeature('bestFriendName', ''),
-      new ChildFeature('dogName', ''),
-      new ChildFeature('grandMaName', ''),
-      new ChildFeature('grandPaName', ''),
+      new ChildFeature('dadName', 'papà'),
+      new ChildFeature('momName', 'mamma'),
+      new ChildFeature('bestFriendName', "l'amico del cuore"),
+      new ChildFeature('dogName', 'Fido'),
+      new ChildFeature('grandMaName', 'nonna'),
+      new ChildFeature('grandPaName', 'nonno'),
       new ChildFeature('birthday', ''),
     );
     const child = this.navParams.get('child');
@@ -60,37 +60,37 @@ export class ChildPage {
       this.child = new Child(child.id, child.name, child.sex, child.child_features);
     }
 
-    this.dadName = ""
+    this.dadName = "papà"
     if (this.child.child_features.filter(feature => feature.feature == 'dadName')[0] != null)
     {
       this.dadName = this.child.child_features.filter(feature => feature.feature == 'dadName')[0].value
     }
 
-    this.momName = ""
+    this.momName = "mamma"
     if (this.child.child_features.filter(feature => feature.feature == 'momName')[0] != null)
     {
       this.momName = this.child.child_features.filter(feature => feature.feature == 'momName')[0].value
     }
 
-    this.bestFriendName = ""
+    this.bestFriendName = "l'amico del cuore"
     if (this.child.child_features.filter(feature => feature.feature == 'bestFriendName')[0] != null)
     {
       this.bestFriendName = this.child.child_features.filter(feature => feature.feature == 'bestFriendName')[0].value
     }
 
-    this.dogName = ""
+    this.dogName = "il mio cane"
     if (this.child.child_features.filter(feature => feature.feature == 'dogName')[0] != null)
     {
       this.dogName = this.child.child_features.filter(feature => feature.feature == 'dogName')[0].value
     }
 
-    this.grandMaName = ""
+    this.grandMaName = "nonna"
     if (this.child.child_features.filter(feature => feature.feature == 'grandMaName')[0] != null)
     {
       this.grandMaName = this.child.child_features.filter(feature => feature.feature == 'grandMaName')[0].value
     }
 
-    this.grandPaName = ""
+    this.grandPaName = "nonno"
     if (this.child.child_features.filter(feature => feature.feature == 'grandPaName')[0] != null)
     {
       this.grandPaName = this.child.child_features.filter(feature => feature.feature == 'grandPaName')[0].value
@@ -243,4 +243,8 @@ export class ChildPage {
   openHairColorSelect() { this.hairColorSelectRef.open(); }
   openSkinColorSelect() { this.skinColorSelectRef.open(); }
   openEyeColorSelect()  { this.eyeColorSelectRef.open(); }
+
+  newValue() {
+    this.showSave = (this.child.name.length != 0)&&(this.birthday.length != 0)
+  }
 }
