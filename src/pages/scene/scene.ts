@@ -105,6 +105,6 @@ export class ScenePage {
 
   goToTalesPage() {
     event.stopPropagation();
-    this.navCtrl.push('TalesPage', { child: this.child });
+    this.navCtrl.push('TalesPage', { child: this.child, tale:this.tale });
   }
 }

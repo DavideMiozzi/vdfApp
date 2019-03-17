@@ -261,3 +261,71 @@ ion-list.with-wave {
 .text-input {
   font-size: 1.4em;
 }
+ion-card {
+  border-radius: 18px !important;
+  border-width: 9px;
+  border-style: solid;
+  border-color: #26b4d7;
+  margin: 10px 0 0 !important;
+  width: 100% !important;
+  position: relative;
+
+  ion-card-header {
+    padding: 0 !important;
+    position: relative;
+
+    img:after {
+      content: ' ';
+      background: rgba(39,62,84,0.82);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+    }
+
+    ion-label.price {
+      color: #fff;
+      font-size: 40px;
+      padding: 0 10px;
+      margin: auto;
+    }
+  }
+
+  .card-title {
+      width: 100%;
+      padding: 0;
+  }
+
+  ion-card-content {
+      position: relative;
+      padding: 0px 16px !important;
+  }
+
+  &.locked:after {
+      content: ' ';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: #000;
+      opacity: 0.4;
+  }
+}
+ion-fab {
+  &[right] {
+      margin-right: -10px !important;
+  }
+  &[top] {
+      margin-top: -10px !important;
+  }
+}
+.scroll-content {
+  padding: 0 10px;
+}
+
+button.action-order {
+  font-size: 1.6em;
+}

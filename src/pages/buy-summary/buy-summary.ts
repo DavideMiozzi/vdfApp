@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TranslateService } from '@ngx-translate/core';
 
 /**
  * Generated class for the BuySummaryPage page.
@@ -15,11 +16,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class BuySummaryPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              public translate:TranslateService) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BuySummaryPage');
+  }
+ 
+  goback() {
+    this.navCtrl.pop();
   }
 
   public gotoNextPage() {

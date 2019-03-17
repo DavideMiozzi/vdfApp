@@ -40,6 +40,11 @@ export class TalesPage {
       .forEach((obj) => {
         let tale = Object.assign(new Tale(), obj);
         tale.customizeTitle(env.child);
+        /* ***************************************************** PEZZAAAAAAAAAAAA */
+        /* ***************************************************** PEZZAAAAAAAAAAAA */
+        tale.printing_price = 28.00;
+        /* ***************************************************** PEZZAAAAAAAAAAAA */
+        /* ***************************************************** PEZZAAAAAAAAAAAA */
         env.tales.push(tale);
       })
     })
@@ -184,6 +189,6 @@ export class TalesPage {
 
   buyTale(tale) {
     event.stopPropagation();
-    this.navCtrl.push('BuyAdd2cartPage', { tale: tale, child: this.child });
+    this.navCtrl.push('BuyAdd2cartPage', { child: this.child, tale: tale });
   }
 }
