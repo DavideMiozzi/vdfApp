@@ -10,4 +10,8 @@ page-buy-add2cart {
         width: 100% !important;
         line-height: 1em !important;
     }
+
+    .primary {
+        color: color($colors, primary);
+    }
 }

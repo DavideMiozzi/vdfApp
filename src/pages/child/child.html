@@ -133,7 +133,10 @@
           <ion-col col-6 [hidden]="child.id == 0">
             <button ion-button (click)="goToTalesPage()">{{ "Favole" | translate }}</button>
           </ion-col>
-        </ion-row>
+          <ion-col col-12>
+              <button ion-button color="danger" (click)="deleteChild()">{{ "Cancella" | translate }}</button>
+            </ion-col>
+          </ion-row>
       </ion-grid>
     </ion-item>
 

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, Select } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Select, AlertController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 
 import { ToastController } from 'ionic-angular';
@@ -37,7 +37,8 @@ export class ChildPage {
               public navParams: NavParams,
               private childService: ChildService,
               private toastCtrl: ToastController, 
-              public translate:TranslateService) {
+              public translate:TranslateService,
+              public alertCtrl: AlertController) {
     this.showSave = false;
     this.features = new Array(
       new ChildFeature('hairShape', 'co'),
@@ -243,4 +244,26 @@ export class ChildPage {
   openHairColorSelect() { this.hairColorSelectRef.open(); }
   openSkinColorSelect() { this.skinColorSelectRef.open(); }
   openEyeColorSelect()  { this.eyeColorSelectRef.open(); }
+
+  deleteChild() {
+    const confirm = this.alertCtrl.create({
+      title: 'Cancellare il bocia?',
+      message: 'Sei sicuro di voler cancellare il bocchia: "'+this.child.name+'"?',
+      buttons: [
+        {
+          text: 'No dai, ci ripenso!',
+          handler: () => {
+            console.log('NO, non salvare');
+          }
+        },
+        {
+          text: 'Vai, eliminalo!!!',
+          handler: () => {
+            console.log('OK, cancella il bocia');
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
 }
