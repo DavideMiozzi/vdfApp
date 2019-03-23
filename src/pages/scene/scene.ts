@@ -17,6 +17,7 @@ import * as Constants from '../../constants';
 
 export class ScenePage {
 
+  originNumber: number;
   sceneNumber: number;
   tale: Tale;
   child: Child;
@@ -33,6 +34,7 @@ export class ScenePage {
               public translateService:TranslateService) {
     this.screenOrientation = screenOrientation;
     this.unlockOrientation = true;
+    this.originNumber = this.navParams.get('originNumber');
     this.sceneNumber = this.navParams.get('sceneNumber');
     this.featureString = this.navParams.get('featureString');
     this.tale = this.navParams.get('tale');
@@ -58,22 +60,36 @@ export class ScenePage {
 
   swiped(event) {
     if (event.direction == 2 && this.sceneNumber < this.tale.scenes.length) {
+      // se la scena ha delle opzioni ignora lo swipe in avanti
+      if (this.scene.option_a_dest != null) { return }
+
       this.unlockOrientation = false;
       // da destra a sinistra -> scena successiva
       this.navCtrl.push('ScenePage', {
         tale: this.tale,
         sceneNumber: this.sceneNumber + 1,
-        featureString: this.featureString
+        featureString: this.featureString,
+        originNumber: this.sceneNumber
       });
     } else if (event.direction == 4 && this.sceneNumber > 1) {
       this.unlockOrientation = false;
-      // da sinistra a destra-> scena precedente
+      // da sinistra a destra-> scena da cui si è arrivati
       this.navCtrl.push('ScenePage', {
         tale: this.tale,
-        sceneNumber: this.sceneNumber - 1,
-        featureString: this.featureString
+        sceneNumber: this.originNumber,
+        featureString: this.featureString,
+        originNumber: this.sceneNumber
       });
     }
+  }
+
+  jumpToScene(destination) {
+    this.navCtrl.push('ScenePage', {
+      tale: this.tale,
+      sceneNumber: destination,
+      featureString: this.featureString,
+      originNumber: this.sceneNumber
+    });
   }
 
   private sceneString(image_path): string {

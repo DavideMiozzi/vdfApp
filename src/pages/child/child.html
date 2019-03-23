@@ -13,14 +13,12 @@
   <ion-list>
     <ion-item>
       <ion-label color="primary" stacked>{{ "Nome" | translate }}</ion-label>
-      <ion-input [(ngModel)]="child.name" (ngModelChange)="showSave = true"></ion-input>
-      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
+      <ion-input [(ngModel)]="child.name" (ngModelChange)="newValue()"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="primary" stacked>{{ "Data di nascita" | translate }}</ion-label>
-      <ion-datetime displayFormat="MM DD YYYY" [(ngModel)]="birthday" (ngModelChange)="showSave = true"></ion-datetime>
-      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
+      <ion-datetime displayFormat="MM DD YYYY" [(ngModel)]="birthday" (ngModelChange)="newValue()"></ion-datetime>
     </ion-item>
  
     <ion-item>
@@ -90,42 +88,41 @@
 
     <ion-item>
       <ion-label color="primary" stacked>{{ "Nome Papà" | translate }}:</ion-label>
-      <ion-input [(ngModel)]="dadName" (ngModelChange)="showSave = true"></ion-input>
-      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
+      <ion-input [(ngModel)]="dadName" (ngModelChange)="newValue()"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="primary" stacked>{{ "Nome Mamma" | translate }}:</ion-label>
-      <ion-input [(ngModel)]="momName" (ngModelChange)="showSave = true"></ion-input>
-      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
+      <ion-input [(ngModel)]="momName" (ngModelChange)="newValue()"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="primary" stacked>{{ "Nome Amico/a del cuore" | translate }}:</ion-label>
-      <ion-input [(ngModel)]="bestFriendName" (ngModelChange)="showSave = true"></ion-input>
-      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
+      <ion-input [(ngModel)]="bestFriendName" (ngModelChange)="newValue()"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="primary" stacked>{{ "Nome Cane" | translate }}:</ion-label>
-      <ion-input [(ngModel)]="dogName" (ngModelChange)="showSave = true"></ion-input>
-      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
+      <ion-input [(ngModel)]="dogName" (ngModelChange)="newValue()"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="primary" stacked>{{ "Nome Nonno" | translate }}:</ion-label>
-      <ion-input [(ngModel)]="grandPaName" (ngModelChange)="showSave = true"></ion-input>
-      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
+      <ion-input [(ngModel)]="grandPaName" (ngModelChange)="newValue()"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label color="primary" stacked>{{ "Nome Nonna" | translate }}:</ion-label>
-      <ion-input [(ngModel)]="grandMaName" (ngModelChange)="showSave = true"></ion-input>
-      <button ion-button item-end [hidden]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
+      <ion-input [(ngModel)]="grandMaName" (ngModelChange)="newValue()"></ion-input>
     </ion-item>
 
     <ion-item class="navigation__buttons">
       <ion-grid>
+        <ion-row>
+          <ion-col col-12>
+            <button ion-button item-end [disabled]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
+          </ion-col>
+        </ion-row>
         <ion-row>
           <ion-col col-6>
             <button ion-button (click)="goToChildrenPage()">{{ "Bambini" | translate }}</button>

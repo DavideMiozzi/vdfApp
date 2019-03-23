@@ -38,14 +38,14 @@
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 1000;
+    z-index: 900;
     font-family: 'Patrick Hand SC', cursive;
     font-size: 4vh;
     width: 100%;
     height: 100%;
     /*display: none;*/
   }
-  #ui { z-index: 10000; }
+  #ui { z-index: 998; }
   .textbox {
     position: absolute;
     /*background-color: rgba(0, 255, 64, 0.1);*/
@@ -76,4 +76,22 @@
     -o-transform: translate(0%, -50%);
     -webkit-transform: translate(0%, -50%);
   }
+}
+
+.option_box {
+  position: absolute;
+  width: 38vmax;
+  height: 20vmax;
+  right: 7vmax;
+  left: auto;
+}
+
+#option_box_a {
+  /*background-color: aquamarine;*/
+  bottom: 52%;
+}
+
+#option_box_b {
+  top: 52%;
+  /*background-color: teal;*/
 }

@@ -7,7 +7,10 @@
     		{{scene.text}}
     	</div>
     </div>
-    <div class="layer" id="ui"></div>
+    <div class="layer" id="ui">
+      <div *ngIf="scene.option_a_dest != null" class="option_box" id="option_box_a" (click)="jumpToScene(scene.option_a_dest)"></div>
+      <div *ngIf="scene.option_b_dest != null" class="option_box" id="option_box_b" (click)="jumpToScene(scene.option_b_dest)"></div>
+    </div>
   </div>
   <div class="rotate-device-warning"><h2>{{ "RuotaSchermo" | translate }}</h2></div>
  

@@ -39,7 +39,7 @@ export class TaleService {
           scene.style = JSON.parse(scene.style);
         else
           scene.style = JSON.parse("{"+scene.style+"}");
-        let sceneObj = new Scene(scene.text, scene.number, scene.style);
+        let sceneObj = new Scene(scene.text, scene.number, scene.style, scene.option_a_dest, scene.option_b_dest);
         tale.scenes.push(sceneObj);
       })
       return tale
