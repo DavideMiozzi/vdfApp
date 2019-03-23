@@ -1,0 +1,106 @@
+[1mdiff --git a/config.xml b/config.xml[m
+[1mindex 4b7a25b..e69de29 100644[m
+[1m--- a/config.xml[m
+[1m+++ b/config.xml[m
+[36m@@ -1,101 +0,0 @@[m
+[31m-<?xml version='1.0' encoding='utf-8'?>[m
+[31m-<widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">[m
+[31m-    <name>Camaleon</name>[m
+[31m-    <description>An awesome Ionic/Cordova app.</description>[m
+[31m-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>[m
+[31m-    <content src="index.html" />[m
+[31m-    <access origin="*" />[m
+[31m-    <allow-intent href="http://*/*" />[m
+[31m-    <allow-intent href="https://*/*" />[m
+[31m-    <allow-intent href="tel:*" />[m
+[31m-    <allow-intent href="sms:*" />[m
+[31m-    <allow-intent href="mailto:*" />[m
+[31m-    <allow-intent href="geo:*" />[m
+[31m-    <preference name="ScrollEnabled" value="false" />[m
+[31m-    <preference name="android-minSdkVersion" value="19" />[m
+[31m-    <preference name="BackupWebStorage" value="none" />[m
+[31m-    <preference name="SplashMaintainAspectRatio" value="true" />[m
+[31m-    <preference name="FadeSplashScreenDuration" value="300" />[m
+[31m-    <preference name="SplashShowOnlyFirstTime" value="false" />[m
+[31m-    <preference name="ShowSplashScreenSpinner" value="false" />[m
+[31m-    <preference name="SplashScreen" value="screen" />[m
+[31m-    <preference name="SplashScreenDelay" value="3000" />[m
+[31m-    <platform name="android">[m
+[31m-        <allow-intent href="market:*" />[m
+[31m-        <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />[m
+[31m-        <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />[m
+[31m-        <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />[m
+[31m-        <icon density="xhdpi" src="resources/android/icon/drawable-xhdpi-icon.png" />[m
+[31m-        <icon density="xxhdpi" src="resources/android/icon/drawable-xxhdpi-icon.png" />[m
+[31m-        <icon density="xxxhdpi" src="resources/android/icon/drawable-xxxhdpi-icon.png" />[m
+[31m-        <splash density="land-ldpi" src="resources/android/splash/drawable-land-ldpi-screen.png" />[m
+[31m-        <splash density="land-mdpi" src="resources/android/splash/drawable-land-mdpi-screen.png" />[m
+[31m-        <splash density="land-hdpi" src="resources/android/splash/drawable-land-hdpi-screen.png" />[m
+[31m-        <splash density="land-xhdpi" src="resources/android/splash/drawable-land-xhdpi-screen.png" />[m
+[31m-        <splash density="land-xxhdpi" src="resources/android/splash/drawable-land-xxhdpi-screen.png" />[m
+[31m-        <splash density="land-xxxhdpi" src="resources/android/splash/drawable-land-xxxhdpi-screen.png" />[m
+[31m-        <splash density="port-ldpi" src="resources/android/splash/drawable-port-ldpi-screen.png" />[m
+[31m-        <splash density="port-mdpi" src="resources/android/splash/drawable-port-mdpi-screen.png" />[m
+[31m-        <splash density="port-hdpi" src="resources/android/splash/drawable-port-hdpi-screen.png" />[m
+[31m-        <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />[m
+[31m-        <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />[m
+[31m-        <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />[m
+[31m-    </platform>[m
+[31m-    <platform name="ios">[m
+[31m-        <allow-intent href="itms:*" />[m
+[31m-        <allow-intent href="itms-apps:*" />[m
+[31m-        <icon height="57" src="resources/ios/icon/icon.png" width="57" />[m
+[31m-        <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />[m
+[31m-        <icon height="40" src="resources/ios/icon/icon-40.png" width="40" />[m
+[31m-        <icon height="80" src="resources/ios/icon/icon-40@2x.png" width="80" />[m
+[31m-        <icon height="120" src="resources/ios/icon/icon-40@3x.png" width="120" />[m
+[31m-        <icon height="50" src="resources/ios/icon/icon-50.png" width="50" />[m
+[31m-        <icon height="100" src="resources/ios/icon/icon-50@2x.png" width="100" />[m
+[31m-        <icon height="60" src="resources/ios/icon/icon-60.png" width="60" />[m
+[31m-        <icon height="120" src="resources/ios/icon/icon-60@2x.png" width="120" />[m
+[31m-        <icon height="180" src="resources/ios/icon/icon-60@3x.png" width="180" />[m
+[31m-        <icon height="72" src="resources/ios/icon/icon-72.png" width="72" />[m
+[31m-        <icon height="144" src="resources/ios/icon/icon-72@2x.png" width="144" />[m
+[31m-        <icon height="76" src="resources/ios/icon/icon-76.png" width="76" />[m
+[31m-        <icon height="152" src="resources/ios/icon/icon-76@2x.png" width="152" />[m
+[31m-        <icon height="167" src="resources/ios/icon/icon-83.5@2x.png" width="167" />[m
+[31m-        <icon height="29" src="resources/ios/icon/icon-small.png" width="29" />[m
+[31m-        <icon height="58" src="resources/ios/icon/icon-small@2x.png" width="58" />[m
+[31m-        <icon height="87" src="resources/ios/icon/icon-small@3x.png" width="87" />[m
+[31m-        <icon height="1024" src="resources/ios/icon/icon-1024.png" width="1024" />[m
+[31m-        <splash height="1136" src="resources/ios/splash/Default-568h@2x~iphone.png" width="640" />[m
+[31m-        <splash height="1334" src="resources/ios/splash/Default-667h.png" width="750" />[m
+[31m-        <splash height="2208" src="resources/ios/splash/Default-736h.png" width="1242" />[m
+[31m-        <splash height="1242" src="resources/ios/splash/Default-Landscape-736h.png" width="2208" />[m
+[31m-        <splash height="1536" src="resources/ios/splash/Default-Landscape@2x~ipad.png" width="2048" />[m
+[31m-        <splash height="2048" src="resources/ios/splash/Default-Landscape@~ipadpro.png" width="2732" />[m
+[31m-        <splash height="768" src="resources/ios/splash/Default-Landscape~ipad.png" width="1024" />[m
+[31m-        <splash height="2048" src="resources/ios/splash/Default-Portrait@2x~ipad.png" width="1536" />[m
+[31m-        <splash height="2732" src="resources/ios/splash/Default-Portrait@~ipadpro.png" width="2048" />[m
+[31m-        <splash height="1024" src="resources/ios/splash/Default-Portrait~ipad.png" width="768" />[m
+[31m-        <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />[m
+[31m-        <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />[m
+[31m-        <splash height="2732" src="resources/ios/splash/Default@2x~universal~anyany.png" width="2732" />[m
+[31m-    </platform>[m
+[31m-    <plugin name="cordova-plugin-network-information" spec="^2.0.1" />[m
+[31m-    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />[m
+[31m-    <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />[m
+[31m-    <plugin name="cordova-plugin-device" spec="^2.0.2" />[m
+[31m-    <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />[m
+[31m-    <plugin name="cordova-plugin-ionic-webview" spec="^2.3.1" />[m
+[31m-    <plugin name="cordova-plugin-ionic-keyboard" spec="^2.1.3" />[m
+[31m-    <plugin name="cordova-plugin-screen-orientation" spec="^3.0.1" />[m
+[31m-    <plugin name="cordova-plugin-facebook4" spec="^4.1.0">[m
+[31m-        <variable name="APP_ID" value="123456789" />[m
+[31m-        <variable name="APP_NAME" value="vdfApp" />[m
+[31m-        <variable name="FACEBOOK_HYBRID_APP_EVENTS" value="false" />[m
+[31m-        <variable name="FACEBOOK_ANDROID_SDK_VERSION" value="4.38.1" />[m
+[31m-    </plugin>[m
+[31m-    <plugin name="cc.fovea.cordova.purchase" spec="^7.2.6">[m
+[31m-        <variable name="BILLING_KEY" value="987654321" />[m
+[31m-    </plugin>[m
+[31m-    <plugin name="cordova-plugin-globalization" spec="1.11.0" />[m
+[31m-    <plugin name="cordova-plugin-geolocation" spec="4.0.1" />[m
+[31m-    <engine name="browser" spec="5.0.4" />[m
+[31m-    <engine name="android" spec="^6.3.0" />[m
+[31m-</widget>[m

@@ -260,6 +260,8 @@ export class ChildPage {
           text: 'Vai, eliminalo!!!',
           handler: () => {
             console.log('OK, cancella il bocia');
+            let env = this
+            this.childService.deleteChild(this.child).then(() => env.navCtrl.push('ChildrenPage'))
           }
         }
       ]
