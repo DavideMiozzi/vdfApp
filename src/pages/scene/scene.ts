@@ -34,12 +34,19 @@ export class ScenePage {
               public translateService:TranslateService) {
     this.screenOrientation = screenOrientation;
     this.unlockOrientation = true;
-    this.originNumber = this.navParams.get('originNumber');
-    this.sceneNumber = this.navParams.get('sceneNumber');
-    this.featureString = this.navParams.get('featureString');
+
     this.tale = this.navParams.get('tale');
+    this.featureString = this.navParams.get('featureString');
     this.child = this.navParams.get('child');
+
     this.scene = this.tale.scenes.filter(scene => scene.number == this.sceneNumber)[0];
+    this.sceneNumber = this.navParams.get('sceneNumber');
+    if (this.scene.originNumber != null) {
+      this.originNumber = this.scene.originNumber
+    } else {
+      this.originNumber = this.navParams.get('originNumber');
+    }
+
     console.log("Scene number:" + this.sceneNumber);
     console.log(this.tale);
     console.log(this.scene);
@@ -65,9 +72,13 @@ export class ScenePage {
 
       this.unlockOrientation = false;
       // da destra a sinistra -> scena successiva
+      let nextScene = this.sceneNumber + 1
+      if (this.scene.destNumber != null) {
+        nextScene = this.scene.destNumber
+      }
       this.navCtrl.push('ScenePage', {
         tale: this.tale,
-        sceneNumber: this.sceneNumber + 1,
+        sceneNumber: nextScene,
         featureString: this.featureString,
         originNumber: this.sceneNumber
       });
