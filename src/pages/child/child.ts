@@ -116,6 +116,7 @@ export class ChildPage {
   ngOnInit() {
     if (this.child.id != 0) {
       this.childService.getChild(this.child.id).then((child) => {
+        this.child = child;
         console.log("OOO");
         console.log(child);
         // this.child.id = child.id;

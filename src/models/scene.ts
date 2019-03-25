@@ -15,4 +15,5 @@ export class Scene {
     this.option_b_dest = option_b_dest;
     this.originNumber = originNumber;
     this.destNumber = destNumber;
+  }
 }

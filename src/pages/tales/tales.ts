@@ -60,18 +60,19 @@ export class TalesPage {
     .then((obj) => {
       console.log("obj");
       console.log(obj);
-		// typescript... tale non è tales
-		let tale = Object.assign(new Tale(), obj);
-		tale.customizeTitle(env.child);
-		tale.customizeScenes(env.child);
-		env.selectedTale = tale
-		this.navCtrl.push('ScenePage', {
-			tale: env.selectedTale,
-			child: env.child,
-			sceneNumber: 1,
-			featureString: env.child.features_string
-		  });
-	})
+      // typescript... tale non è tales
+      let tale = Object.assign(new Tale(), obj);
+      console.log(tale);
+      tale.customizeTitle(env.child);
+      tale.customizeScenes(env.child);
+      env.selectedTale = tale
+      this.navCtrl.push('ScenePage', {
+        tale: env.selectedTale,
+        child: env.child,
+        sceneNumber: 1,
+        featureString: env.child.features_string
+        });
+    })
 
   }
 

@@ -97,7 +97,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-label color="primary" stacked>{{ "Nome Amico/a del cuore" | translate }}:</ion-label>
+      <ion-label color="primary" stacked>{{ child.sex == "girl" ? ("Nome Amica del cuore" | translate) : ("Nome Amico del cuore" | translate) }}:</ion-label>
       <ion-input [(ngModel)]="bestFriendName" (ngModelChange)="newValue()"></ion-input>
     </ion-item>
 

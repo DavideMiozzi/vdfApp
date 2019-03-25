@@ -38,9 +38,9 @@ export class ScenePage {
     this.tale = this.navParams.get('tale');
     this.featureString = this.navParams.get('featureString');
     this.child = this.navParams.get('child');
+    this.sceneNumber = this.navParams.get('sceneNumber');
 
     this.scene = this.tale.scenes.filter(scene => scene.number == this.sceneNumber)[0];
-    this.sceneNumber = this.navParams.get('sceneNumber');
     if (this.scene.originNumber != null) {
       this.originNumber = this.scene.originNumber
     } else {
@@ -78,6 +78,7 @@ export class ScenePage {
       }
       this.navCtrl.push('ScenePage', {
         tale: this.tale,
+        child: this.child,
         sceneNumber: nextScene,
         featureString: this.featureString,
         originNumber: this.sceneNumber
@@ -87,6 +88,7 @@ export class ScenePage {
       // da sinistra a destra-> scena da cui si è arrivati
       this.navCtrl.push('ScenePage', {
         tale: this.tale,
+        child: this.child,
         sceneNumber: this.originNumber,
         featureString: this.featureString,
         originNumber: this.sceneNumber
@@ -97,6 +99,7 @@ export class ScenePage {
   jumpToScene(destination) {
     this.navCtrl.push('ScenePage', {
       tale: this.tale,
+      child: this.child,
       sceneNumber: destination,
       featureString: this.featureString,
       originNumber: this.sceneNumber
