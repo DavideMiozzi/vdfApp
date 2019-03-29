@@ -21,6 +21,7 @@ export class BuyCheckoutPage {
   tale: Tale;
   child: Child;
   dedica: string;
+  check_Spedizione: Boolean = false;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
@@ -46,7 +47,7 @@ export class BuyCheckoutPage {
 
   public gotoNextPage() {
     event.stopPropagation();
-    this.navCtrl.push('BuySummaryPage');
+    this.navCtrl.push('BuySummaryPage', { child: this.child, tale: this.tale });
   }
 
 }

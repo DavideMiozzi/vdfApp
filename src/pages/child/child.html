@@ -9,56 +9,110 @@
 
 
 <ion-content>
- 
+
+  <ion-grid>
+    <ion-row>
+        <ion-col>
+          <ion-item no-padding>
+            <ion-label color="primary" stacked>{{ "Nome" | translate }}</ion-label>
+            <ion-input [(ngModel)]="child.name" (ngModelChange)="newValue()"></ion-input>
+          </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+          <ion-item no-padding>
+            <ion-label color="primary" stacked>{{ "Data di nascita" | translate }}</ion-label>
+            <ion-datetime displayFormat="MM DD YYYY" [(ngModel)]="birthday" (ngModelChange)="newValue()"></ion-datetime>
+          </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-2>
+          <button class="circular-button boy" ion-button icon-only [small]="child.sex == 'girl'" (click)="setSex('boy')">
+            <ion-icon name="male"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-8><div class="child-avatar" [ngStyle]="{ 'background-image': 'url(assets/imgs/children_avatars/'+avatarFileName+'.png)'}"></div></ion-col>
+        <ion-col col-2>
+          <button class="circular-button girl" ion-button icon-only [small]="child.sex == 'boy'" (click)="setSex('girl')">
+            <ion-icon name="female"></ion-icon>
+          </button>
+        </ion-col>
+    </ion-row>
+    <ion-row class="child-features__item">
+      <ion-col col-6>
+        <button ion-button (click)="openHairShapeSelect()">{{ "Forma capelli" | translate }}</button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button (click)="openHairColorSelect()">{{ "Colore capelli" | translate }}</button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="child-features__item">
+      <ion-col col-6>
+        <button ion-button (click)="openSkinColorSelect()">{{ "Colore pelle" | translate }}</button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button (click)="openEyeColorSelect()">{{ "Colore occhi" | translate }}</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label color="primary" stacked>{{ "Nome Papà" | translate }}:</ion-label>
+        <ion-input [(ngModel)]="dadName" (ngModelChange)="newValue()"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label color="primary" stacked>{{ "Nome Mamma" | translate }}:</ion-label>
+        <ion-input [(ngModel)]="momName" (ngModelChange)="newValue()"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label color="primary" stacked>{{ child.sex == "girl" ? ("Nome Amica del cuore" | translate) : ("Nome Amico del cuore" | translate) }}:</ion-label>
+        <ion-input [(ngModel)]="bestFriendName" (ngModelChange)="newValue()"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label color="primary" stacked>{{ "Nome Cane" | translate }}:</ion-label>
+        <ion-input [(ngModel)]="dogName" (ngModelChange)="newValue()"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label color="primary" stacked>{{ "Nome Nonno" | translate }}:</ion-label>
+        <ion-input [(ngModel)]="grandPaName" (ngModelChange)="newValue()"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label color="primary" stacked>{{ "Nome Nonna" | translate }}:</ion-label>
+        <ion-input [(ngModel)]="grandMaName" (ngModelChange)="newValue()"></ion-input>
+      </ion-item>
+    </ion-row>
+    <ion-row class="navigation__buttons" margin-top>
+      <ion-col col-12>
+        <button ion-button item-end [disabled]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="navigation__buttons">
+      <ion-col col-6>
+        <button ion-button (click)="goToChildrenPage()">{{ "Bambini" | translate }}</button>
+      </ion-col>
+      <ion-col col-6 [hidden]="child.id == 0">
+        <button ion-button (click)="goToTalesPage()">{{ "Favole" | translate }}</button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="navigation__buttons">
+      <ion-col col-12>
+        <button ion-button color="danger" (click)="deleteChild()">{{ "Cancella" | translate }}</button>
+      </ion-col>
+    </ion-row>
+</ion-grid>
+
   <ion-list>
-    <ion-item>
-      <ion-label color="primary" stacked>{{ "Nome" | translate }}</ion-label>
-      <ion-input [(ngModel)]="child.name" (ngModelChange)="newValue()"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label color="primary" stacked>{{ "Data di nascita" | translate }}</ion-label>
-      <ion-datetime displayFormat="MM DD YYYY" [(ngModel)]="birthday" (ngModelChange)="newValue()"></ion-datetime>
-    </ion-item>
- 
-    <ion-item>
-      <ion-grid>
-        <ion-row>
-          <ion-col col-2>
-            <button class="circular-button boy" ion-button icon-only [small]="child.sex == 'girl'" (click)="setSex('boy')">
-              <ion-icon name="male"></ion-icon>
-            </button>
-          </ion-col>
-          <ion-col col-8><div class="child-avatar" [ngStyle]="{ 'background-image': 'url(assets/imgs/children_avatars/'+avatarFileName+'.png)'}"></div></ion-col>
-          <ion-col col-2>
-            <button class="circular-button girl" ion-button icon-only [small]="child.sex == 'boy'" (click)="setSex('girl')">
-              <ion-icon name="female"></ion-icon>
-            </button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-item>
-
-    <ion-item class="child-features__item">
-      <ion-grid>
-        <ion-row>
-          <ion-col col-6>
-            <button ion-button (click)="openHairShapeSelect()">{{ "Forma capelli" | translate }}</button>
-          </ion-col>
-          <ion-col col-6>
-            <button ion-button (click)="openHairColorSelect()">{{ "Colore capelli" | translate }}</button>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-6>
-            <button ion-button (click)="openSkinColorSelect()">{{ "Colore pelle" | translate }}</button>
-          </ion-col>
-          <ion-col col-6>
-            <button ion-button (click)="openEyeColorSelect()">{{ "Colore occhi" | translate }}</button>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-item>
 
     <ion-select multiple="false" #hairShapeSelect class="hidden" [(ngModel)]="child.hairShape" (ngModelChange)="saveChild()">
       <ion-option value="co">{{ "ca_Corti" | translate }}</ion-option>
@@ -86,54 +140,9 @@
       <ion-option value="az">{{ "o_Azzurri" | translate }}</ion-option>
     </ion-select>
 
-    <ion-item>
-      <ion-label color="primary" stacked>{{ "Nome Papà" | translate }}:</ion-label>
-      <ion-input [(ngModel)]="dadName" (ngModelChange)="newValue()"></ion-input>
-    </ion-item>
 
     <ion-item>
-      <ion-label color="primary" stacked>{{ "Nome Mamma" | translate }}:</ion-label>
-      <ion-input [(ngModel)]="momName" (ngModelChange)="newValue()"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label color="primary" stacked>{{ child.sex == "girl" ? ("Nome Amica del cuore" | translate) : ("Nome Amico del cuore" | translate) }}:</ion-label>
-      <ion-input [(ngModel)]="bestFriendName" (ngModelChange)="newValue()"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label color="primary" stacked>{{ "Nome Cane" | translate }}:</ion-label>
-      <ion-input [(ngModel)]="dogName" (ngModelChange)="newValue()"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label color="primary" stacked>{{ "Nome Nonno" | translate }}:</ion-label>
-      <ion-input [(ngModel)]="grandPaName" (ngModelChange)="newValue()"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label color="primary" stacked>{{ "Nome Nonna" | translate }}:</ion-label>
-      <ion-input [(ngModel)]="grandMaName" (ngModelChange)="newValue()"></ion-input>
-    </ion-item>
-
-    <ion-item class="navigation__buttons">
       <ion-grid>
-        <ion-row>
-          <ion-col col-12>
-            <button ion-button item-end [disabled]="!showSave" (click)="saveChild()">{{ "Salva" | translate }}</button>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col col-6>
-            <button ion-button (click)="goToChildrenPage()">{{ "Bambini" | translate }}</button>
-          </ion-col>
-          <ion-col col-6 [hidden]="child.id == 0">
-            <button ion-button (click)="goToTalesPage()">{{ "Favole" | translate }}</button>
-          </ion-col>
-          <ion-col col-12>
-              <button ion-button color="danger" (click)="deleteChild()">{{ "Cancella" | translate }}</button>
-            </ion-col>
-          </ion-row>
       </ion-grid>
     </ion-item>
 

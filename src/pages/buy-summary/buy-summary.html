@@ -14,8 +14,17 @@
 </ion-header>
 
 
-<ion-content padding>
-  <h2>Qua ci va:</h2>
+<ion-content padding class="checkout-trip common-bg">
+    <!--trip information-->
+    <div class="trip-info card round">
+      <div class="trip-image border-bottom" [ngStyle]="{'background-image': 'url(' + this.tale.preview_image + ')'}"></div>
+      <ion-grid no-padding>
+        <ion-row>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <h2>Qua ci va:</h2>
   <p>1. Anteprima con titolo della favola scelta con dedica</p>
   <p>2. dati di spedizione</p>
   <p>3. Dati di fatturazione</p>

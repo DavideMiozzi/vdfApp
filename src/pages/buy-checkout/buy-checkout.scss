@@ -26,3 +26,11 @@ page-buy-checkout,
     }
   
   }
+
+  .spedizione {
+    display: none;
+  }
+
+  .spedizione.show {
+    display: inline;
+  }

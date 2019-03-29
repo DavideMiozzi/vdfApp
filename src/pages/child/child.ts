@@ -119,6 +119,7 @@ export class ChildPage {
         this.child = child;
         console.log("OOO");
         console.log(child);
+        console.log(child.featureString);
         // this.child.id = child.id;
         // this.child.name = child.name;
         // this.child.sex = child.sex;
@@ -222,7 +223,12 @@ export class ChildPage {
   }
 
   private updateAvatar() {
-    this.avatarFileName = "avatar_" + this.child.featureString;
+    let featureString = this.child.sex == "boy" ? "m_" : "f_";
+    featureString += "o_" + this.child.child_features.filter(feature => feature.feature == 'eyeColor')[0].value;
+    featureString += "_c_" + this.child.child_features.filter(feature => feature.feature == 'hairShape')[0].value;
+    featureString += this.child.child_features.filter(feature => feature.feature == 'hairColor')[0].value;
+    featureString += "_p_" + this.child.child_features.filter(feature => feature.feature == 'skinColor')[0].value;
+    this.avatarFileName = "avatar_" + featureString;
   }
 
   private goToChildrenPage() { 
