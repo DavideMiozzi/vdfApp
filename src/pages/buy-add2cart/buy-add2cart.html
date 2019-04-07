@@ -29,12 +29,12 @@
           </ion-col>
           <ion-col col-12>
               <ion-item no-padding>
-                <ion-textarea [(ngModel)]="this.dedica" placeholder="{{ 'scrivi dedica' | translate }}" rows="6" maxLength="200" no-margin></ion-textarea>
+                <ion-textarea [(ngModel)]="this.inscription" placeholder="{{ 'scrivi dedica' | translate }}" rows="6" maxLength="200" no-margin></ion-textarea>
               </ion-item>
-              <span class="primary">{{ 200 - this.dedica.length }} / 200</span><br>
+              <span class="primary">{{ 200 - this.inscription.length }} / 200</span><br>
             </ion-col>
           <ion-col col-12 margin-top>
-            <button ion-button (click)="gotoNextPage()" class="action-order" large block margin-bottom>Ordina a soli:<b> {{ this.tale.printing_price | currency:'EUR':true }}</b></button>
+            <button ion-button (click)="createOrder()" class="action-order" large block margin-bottom>Ordina a soli:<b> {{ this.tale.printing_price | currency:'EUR':true }}</b></button>
           </ion-col>
         </ion-row>
       </ion-grid>

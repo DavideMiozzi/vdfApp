@@ -117,7 +117,7 @@ export class ChildService {
     })
 
     children.forEach((child) => this.updateChild(child));
-    this.storage.set("user_modified_offline", 'false');
+    this.storage.set("children_modified_offline", 'false');
     return children;
   }
 

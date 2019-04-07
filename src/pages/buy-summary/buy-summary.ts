@@ -20,14 +20,14 @@ import { Child } from '../../models/child';
 export class BuySummaryPage {
   tale: Tale;
   child: Child;
-  dedica: string;
+  inscription: string;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
               public translate:TranslateService) {
     this.tale = this.navParams.get('tale');
     this.child = this.navParams.get('child');
-    this.dedica = "";
+    this.inscription = "";
     console.log(this.tale);
   }
 

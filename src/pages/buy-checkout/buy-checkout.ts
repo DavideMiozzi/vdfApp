@@ -4,6 +4,9 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { Tale } from '../../models/tale';
 import { Child } from '../../models/child';
+import { Print } from '../../models/order'
+import { Order } from '../../models/order'
+import { OrderService } from '../../providers';
 
 /**
  * Generated class for the BuyCheckoutPage page.
@@ -18,25 +21,25 @@ import { Child } from '../../models/child';
   templateUrl: 'buy-checkout.html',
 })
 export class BuyCheckoutPage {
-  tale: Tale;
   child: Child;
-  dedica: string;
+  tale: Tale;
+  order: Order;
   check_Spedizione: Boolean = false;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
-              public translate:TranslateService) {
+              public translate:TranslateService,
+              private orderService: OrderService) {
     this.tale = this.navParams.get('tale');
     this.child = this.navParams.get('child');
-    this.dedica = "";
-    console.log(this.tale);
+    this.order = this.navParams.get('order');
+    console.log(this.order);
   }
 
   ionViewDidLoad() {
     /* ***************************************************** PEZZAAAAAAAAAAAA */
     /* ***************************************************** PEZZAAAAAAAAAAAA */
     this.tale.printing_price = 28.00;
-    this.dedica = "Dedicato a te, bello libro, bella favola, leggi.";
     /* ***************************************************** PEZZAAAAAAAAAAAA */
     /* ***************************************************** PEZZAAAAAAAAAAAA */
   }
@@ -47,7 +50,7 @@ export class BuyCheckoutPage {
 
   public gotoNextPage() {
     event.stopPropagation();
-    this.navCtrl.push('BuySummaryPage', { child: this.child, tale: this.tale });
+    this.navCtrl.push('BuySummaryPage', { order: this.order, tale: this.tale, child: this.child });
   }
 
 }

@@ -4,6 +4,10 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { Tale } from '../../models/tale';
 import { Child } from '../../models/child';
+import { Print } from '../../models/order'
+import { Order } from '../../models/order'
+import { OrderService } from '../../providers';
+
 
 /**
  * Generated class for the BuyAdd2cartPage page.
@@ -20,14 +24,15 @@ import { Child } from '../../models/child';
 export class BuyAdd2cartPage {
   tale: Tale;
   child: Child;
-  dedica: string;
+  inscription: string;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
-              public translate:TranslateService) {
+              public translate:TranslateService,
+              private orderService: OrderService) {
     this.tale = this.navParams.get('tale');
     this.child = this.navParams.get('child');
-    this.dedica = "";
+    this.inscription = "";
   }
 
   ionViewDidLoad() {
@@ -42,10 +47,18 @@ export class BuyAdd2cartPage {
     this.navCtrl.pop();
   }
   
-  public gotoNextPage() {
+  public createOrder() {
     event.stopPropagation();
     console.log(this.tale);
-    this.navCtrl.push('BuyCheckoutPage', { child: this.child, tale: this.tale });
+    let order = new Order();
+    let print = new Print();
+    print.child_id = this.child.id;
+    print.tale_id = this.tale.id;
+    print.inscription = this.inscription;
+    order.prints.push(print);
+    this.orderService.createOrder(order).then((order) => {
+      this.navCtrl.push('BuyCheckoutPage', { order: order, tale: this.tale, child: this.child });
+    })
   }
 
 }
