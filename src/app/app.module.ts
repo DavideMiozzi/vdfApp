@@ -26,7 +26,8 @@ import {
         AuthService,
         UserService,
         ChildService,
-        TaleService
+        TaleService,
+        OrderService
       } from '../providers';
 
 export function setTranslateLoader(http: HttpClient) {
@@ -67,6 +68,7 @@ export function setTranslateLoader(http: HttpClient) {
     UserService,
     ChildService,
     TaleService,
+    OrderService,
     GooglePlus,
     Facebook,
     InAppPurchase2,

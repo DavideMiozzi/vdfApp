@@ -51,14 +51,10 @@ export class BuyAdd2cartPage {
     event.stopPropagation();
     console.log(this.tale);
     let order = new Order();
-    let print = new Print();
-    print.child_id = this.child.id;
-    print.tale_id = this.tale.id;
-    print.inscription = this.inscription;
+    let print = new Print(this.child.id, this.tale.id, this.inscription);
     order.prints.push(print);
     this.orderService.createOrder(order).then((order) => {
       this.navCtrl.push('BuyCheckoutPage', { order: order, tale: this.tale, child: this.child });
     })
   }
-
 }
