@@ -52,6 +52,9 @@ export class BuyCheckoutPage {
     let env = this;
     this.userService.getUser().subscribe((user) => {
       env.user = Object.assign(env.user, user);
+      if (env.user.delivery_address == null) {
+        env.user.delivery_address = Object.assign(env.user.delivery_address, env.user.billing_address)
+      }
     });
   }
  
@@ -61,18 +64,10 @@ export class BuyCheckoutPage {
 
   public gotoNextPage() {
     event.stopPropagation();
-    if (this.updateDeliveryAddress) {
-      // salva l'indirizzo di spedizione
-      this.userService.updateUser(this.user).subscribe(() => {
-        this.navCtrl.push('BuySummaryPage', { order: this.order, tale: this.tale, child: this.child });
-      });
-    } else {
+    // aggiorna gli indirizzi
+    this.userService.updateUser(this.user).subscribe(() => {
       this.navCtrl.push('BuySummaryPage', { order: this.order, tale: this.tale, child: this.child });
-    }
-  }
-
-  newDeliveryAddress() {
-    this.updateDeliveryAddress = true;
+    });
   }
 
 }

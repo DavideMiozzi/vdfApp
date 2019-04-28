@@ -34,7 +34,7 @@
               <span class="primary">{{ 200 - this.inscription.length }} / 200</span><br>
             </ion-col>
           <ion-col col-12 margin-top>
-            <button ion-button (click)="createOrder()" class="action-order" large block margin-bottom>Ordina a soli:<b> {{ this.tale.printing_price | currency:'EUR':true }}</b></button>
+            <button ion-button (click)="createOrder()" class="action-order" large block margin-bottom>Ordina a soli: <b> {{ this.tale.printing_price | currency:'EUR':true }}</b></button>
           </ion-col>
         </ion-row>
       </ion-grid>
