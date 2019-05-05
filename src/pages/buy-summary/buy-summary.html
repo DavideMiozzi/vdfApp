@@ -19,7 +19,8 @@
     <div class="trip-info card round">
       <div class="trip-image border-bottom" [ngStyle]="{'background-image': 'url(' + this.tale.preview_image + ')'}"></div>
       <ion-grid no-padding>
-        <ion-row>
+        <ion-row margin-top>
+          <button ion-button item-end large block (click)="purchase()">{{ "Paga con Paypal" | translate }}</button>
         </ion-row>
       </ion-grid>
     </div>
@@ -30,6 +31,4 @@
   <p>3. Dati di fatturazione</p>
   <p>4. Importo totale da pagare ben visibile e chiaro</p>
   <p>5. Tasto "Paga con PayPal" bello evidente.</p>
-
-  <button ion-button (click)="gotoNextPage()">Procedi</button>
 </ion-content>

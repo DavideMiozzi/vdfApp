@@ -13,6 +13,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { PayPal } from '@ionic-native/paypal/ngx';
 // import { Geolocation } from '@ionic-native/geolocation';
 // import { GeolocationMock } from '@ionic-native-mocks/geolocation';
 
@@ -73,7 +74,7 @@ export function setTranslateLoader(http: HttpClient) {
     Facebook,
     InAppPurchase2,
     ScreenOrientation,
-
+    PayPal,
     // { provide: Geolocation, useClass: GeolocationMock },
     { provide: HTTP_INTERCEPTORS, useClass: FormatInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

@@ -1,5 +1,5 @@
 {
-  "name": "vdfApp",
+  "name": "vdfapp",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
@@ -14,7 +14,7 @@
     "@angular/animations": "5.2.11",
     "@angular/common": "5.2.11",
     "@angular/compiler": "5.2.11",
-    "@angular/compiler-cli": "5.2.11",
+    "@angular/compiler-cli": "^7.2.14",
     "@angular/core": "5.2.11",
     "@angular/forms": "5.2.11",
     "@angular/http": "5.2.11",
@@ -27,6 +27,7 @@
     "@ionic-native/google-plus": "^4.19.0",
     "@ionic-native/in-app-purchase-2": "^4.19.0",
     "@ionic-native/network": "^4.19.0",
+    "@ionic-native/paypal": "^5.5.1",
     "@ionic-native/screen-orientation": "^4.19.0",
     "@ionic-native/splash-screen": "~4.15.0",
     "@ionic-native/status-bar": "~4.15.0",
@@ -35,7 +36,7 @@
     "@ngx-translate/core": "^9.1.1",
     "@ngx-translate/http-loader": "^4.0.0",
     "cc.fovea.cordova.purchase": "^7.2.6",
-    "cordova-android": "^6.3.0",
+    "cordova-android": "^8.0.0",
     "cordova-browser": "5.0.4",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-facebook4": "^4.1.0",
@@ -88,5 +89,14 @@
       "browser",
       "android"
     ]
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavideMiozzi/vdfApp.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavideMiozzi/vdfApp/issues"
   }
 }

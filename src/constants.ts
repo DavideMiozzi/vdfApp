@@ -7,3 +7,6 @@ export const IMAGES_LOCATION = 'https://s3.eu-west-3.amazonaws.com/favoletest/';
 export const IMAGES_APP_PATH = 'app/';
 export const IMAGES_PREVIEW_PATH = 'anteprima/';
 
+export const PAYPAL_SANDBOX_ACCOUNT = "p.giarola-facilitator@gmail.com"
+export const PAYPAL_SANDBOX_CLIENT_ID = "AdKYFhKNUGYqBRkUZQRZn4XVgPBBbfen-Vri8fONgB7k0z6pY4rHox1Dc9qrTNBnqOkStvia051r9NTD"
+export const PAYPAL_SANDBOX_SECRET = "EGKatD0rX2KIfPH0-CDMT4F93lIify-sNy21oDfn-SvO0yuDLw6OKxxNxblsw6wFoYqcRopJqfBPlaAj"
