@@ -13,7 +13,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { PayPal } from '@ionic-native/paypal/ngx';
+import { PayPal } from '@ionic-native/paypal';
 // import { Geolocation } from '@ionic-native/geolocation';
 // import { GeolocationMock } from '@ionic-native-mocks/geolocation';
 
