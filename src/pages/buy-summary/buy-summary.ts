@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
-import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal';
+import { PayPal, PayPalPayment, PayPalConfiguration, PayPalItem } from '@ionic-native/paypal';
 
 import { Tale } from '../../models/tale';
 import { Child } from '../../models/child';
@@ -43,6 +43,20 @@ export class BuySummaryPage {
 
   public purchase() {
     event.stopPropagation();
+
+    /* TODO */
+    /*
+      Prima di effettuare il pagamento vero e proprio, salverei l'ordine sul nostro backend in stato "in attesa di pagamento",
+      così l'id dell'ordine lo passiamo a paypal e teniamo una corrispondenza tra l'ordine e il pagamento, questo per eventuali
+      verifiche, rimborsi e rogne varie. (non so se l'hai salvato già prima, non ho guardato)
+      con i dati dell'ordine a questo punto possiamo procedere al pagmaento.
+
+      alla risposta di paypal, cambio lo stato dell'ordine in "pagato", "errore pagamento" con dettagli.
+
+      al cambio di stato dell'ordine, faccio 2 parole col pier e ti dico per quali, parte una mail al cliente che notifica ilc cambio stato
+      al cambio stato in "pagato" parte una mail a noi con i dati per la stampa (dati spedizione, fatturazione e pdf del libro)
+    */
+
     this.paypal.init({
       "PayPalEnvironmentProduction": "AdKYFhKNUGYqBRkUZQRZn4XVgPBBbfen-Vri8fONgB7k0z6pY4rHox1Dc9qrTNBnqOkStvia051r9NTD",
       "PayPalEnvironmentSandbox": "AdKYFhKNUGYqBRkUZQRZn4XVgPBBbfen-Vri8fONgB7k0z6pY4rHox1Dc9qrTNBnqOkStvia051r9NTD"
@@ -54,10 +68,12 @@ export class BuySummaryPage {
         // Only needed if you get an "Internal Service Error" after PayPal login!
         //payPalShippingAddressOption: 2 // PayPalShippingAddressOptionPayPal
       })).then(() => {
-        let payment = new PayPalPayment(this.tale.printing_price.toString(), 'EUR', 'Acquisto copia stampata favola', 'sale');
+        let payment = new PayPalPayment(this.tale.printing_price.toString(), 'EUR', 'TESTO DESCRIZIONE ACQUISTO', 'sale');
+        payment.invoiceNumber = "NUMERO DEL NOSTRO ORDINE";
+        payment.softDescriptor = "descrizione che compare sul movimento della carta di credito dell'acquirente max 22 caratteri";
         this.paypal.renderSinglePaymentUI(payment).then(() => {
           // Successfully paid
-          console.log("venduto");
+          console.log("venduto, vado alla pagine thankyou");
 
           // Example sandbox response
           //
