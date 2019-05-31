@@ -47,6 +47,12 @@ export class OrderService {
       .then((orderFromServer) => this.storeOrder(orderFromServer))
   }
 
+  confirmOrderPayment(order, paypal_result): Promise<any> {
+    return this.http.post(this.APIbaseUrl+"orders/process_payment/"+ order.id, "")
+      .toPromise()
+      .then((orderFromServer) => this.storeOrder(orderFromServer))
+  }
+
   async syncOrder(): Promise<Order> {
     // l'ordine nel telefono sovrascrive quello sul server
     const order = await this.getOrderFromStorage();

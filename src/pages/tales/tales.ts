@@ -40,11 +40,6 @@ export class TalesPage {
       .forEach((obj) => {
         let tale = Object.assign(new Tale(), obj);
         tale.customizeTitle(env.child);
-        /* ***************************************************** PEZZAAAAAAAAAAAA */
-        /* ***************************************************** PEZZAAAAAAAAAAAA */
-        tale.printing_price = 28.00;
-        /* ***************************************************** PEZZAAAAAAAAAAAA */
-        /* ***************************************************** PEZZAAAAAAAAAAAA */
         env.tales.push(tale);
       })
     })

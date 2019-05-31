@@ -4,8 +4,8 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { Tale } from '../../models/tale';
 import { Child } from '../../models/child';
-import { Print } from '../../models/order'
-import { Order } from '../../models/order'
+import { Print } from '../../models/order';
+import { Order } from '../../models/order';
 import { OrderService } from '../../providers';
 
 
@@ -36,11 +36,6 @@ export class BuyAdd2cartPage {
   }
 
   ionViewDidLoad() {
-    /* ***************************************************** PEZZAAAAAAAAAAAA */
-    /* ***************************************************** PEZZAAAAAAAAAAAA */
-    this.tale.printing_price = 28.00;
-    /* ***************************************************** PEZZAAAAAAAAAAAA */
-    /* ***************************************************** PEZZAAAAAAAAAAAA */
   }
  
   goback() {
@@ -49,12 +44,21 @@ export class BuyAdd2cartPage {
   
   public createOrder() {
     event.stopPropagation();
-    console.log(this.tale);
-    let order = new Order();
+    let local_order = new Order();
     let print = new Print(this.child.id, this.tale.id, this.inscription);
-    order.prints.push(print);
-    this.orderService.createOrder(order).then((order) => {
+    local_order.prints.push(print);
+    this.orderService.createOrder(local_order).then((order) => {
+      /* MEGALOPEZZ */
+      /* MEGALOPEZZA - è meglio se l'ordine che mi restituisce il server contenga tutti i suoi dati. e che le proprità si chiamino come la classe locale */
+      for (let i = 0; i < order.products.length; i++) {
+        // const product = order.products[i];
+        order.products[i].child_id = local_order.prints[i].child_id;
+        order.products[i].tale_id = local_order.prints[i].tale_id;
+        order.products[i].inscription = local_order.prints[i].inscription;
+      }
+      /* MEGALOPEZZ */
+      /* MEGALOPEZZ */
       this.navCtrl.push('BuyCheckoutPage', { order: order, tale: this.tale, child: this.child });
-    })
+    });
   }
 }

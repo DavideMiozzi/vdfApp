@@ -56,7 +56,8 @@
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",
     "ts-node": "^7.0.1",
-    "zone.js": "0.8.26"
+    "zone.js": "0.8.26",
+    "com.paypal.cordova.mobilesdk": "~3.5.0"
   },
   "devDependencies": {
     "@ionic/app-scripts": "^3.2.3",

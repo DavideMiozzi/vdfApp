@@ -5,8 +5,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { User } from '../../models/user';
 import { Tale } from '../../models/tale';
 import { Child } from '../../models/child';
-import { Print } from '../../models/order'
-import { Order } from '../../models/order'
+import { Print } from '../../models/order';
+import { Order } from '../../models/order';
 import { OrderService, UserService } from '../../providers';
 import { Address } from '../../models/address';
 
