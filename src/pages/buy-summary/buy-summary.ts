@@ -80,17 +80,6 @@ export class BuySummaryPage {
   }
   if (_result.response.state == "approved") {
     this.orderService.confirmOrderPayment(this.order, _result).then((order) => {
-      var local_order = this.order;
-      /* MEGALOPEZZ */
-      /* MEGALOPEZZA - è meglio se l'ordine che mi restituisce il server contenga tutti i suoi dati. e che le proprità si chiamino come la classe locale */
-      for (let i = 0; i < order.products.length; i++) {
-        // const product = order.products[i];
-        order.products[i].child_id = local_order.prints[i].child_id;
-        order.products[i].tale_id = local_order.prints[i].tale_id;
-        order.products[i].inscription = local_order.prints[i].inscription;
-      }
-      /* MEGALOPEZZ */
-      /* MEGALOPEZZ */
       this.navCtrl.push('BuyCheckoutPage', { order: order, tale: this.tale, child: this.child });
     })
   }
