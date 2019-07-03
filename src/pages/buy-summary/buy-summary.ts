@@ -35,13 +35,13 @@ export class BuySummaryPage {
     this.child = this.navParams.get('child');
     this.order = this.navParams.get('order');
     this.inscription = "";
+    console.log("BuySummaryPage");
     console.log(this.tale);
     console.log(this.child);
     console.log(this.order);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BuySummaryPage');
   }
  
   goback() {
@@ -80,8 +80,15 @@ export class BuySummaryPage {
   }
   if (_result.response.state == "approved") {
     this.orderService.confirmOrderPayment(this.order, _result).then((order) => {
-      this.navCtrl.push('BuyCheckoutPage', { order: order, tale: this.tale, child: this.child });
-    })
+      console.log("confirmOrderPayment");
+      console.log(order);
+      this.navCtrl.push('BuyThankyouPage', { order: order, tale: this.tale, child: this.child });
+    },
+    function(error) {
+      console.log("on error");
+      console.log(error);
+      this.navCtrl.push('BuyThankyouPage', { order: this.order, tale: this.tale, child: this.child });
+    });
   }
 
     // this.paypal.init({

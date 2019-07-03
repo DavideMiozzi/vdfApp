@@ -49,7 +49,7 @@ export class BuyAdd2cartPage {
     local_order.prints.push(print);
     this.orderService.createOrder(local_order).then((order) => {
       /* MEGALOPEZZ */
-      /* MEGALOPEZZA - è meglio se l'ordine che mi restituisce il server contenga tutti i suoi dati. e che le proprità si chiamino come la classe locale */
+      /* MEGALOPEZZA - è meglio se l'ordine che mi restituisce il server contenga tutti i suoi dati. e che le proprità si chiamino come la classe locale *
       for (let i = 0; i < order.products.length; i++) {
         // const product = order.products[i];
         order.products[i].child_id = local_order.prints[i].child_id;
@@ -59,6 +59,9 @@ export class BuyAdd2cartPage {
       /* MEGALOPEZZ */
       /* MEGALOPEZZ */
       this.navCtrl.push('BuyCheckoutPage', { order: order, tale: this.tale, child: this.child });
+      // var tale = order.products[0].print.tale;
+      // var child = order.products[0].print.child;
+      // this.navCtrl.push('BuyCheckoutPage', { order: order });
     });
   }
 }

@@ -39,10 +39,16 @@ export class BuyCheckoutPage {
     this.tale = this.navParams.get('tale');
     this.child = this.navParams.get('child');
     this.order = this.navParams.get('order');
+    // this.tale = this.order.products[0].print.tale;
+    // this.child = this.order.products[0].print.child;
     this.user = new User();
     this.user.billing_address = new Address();
     this.user.delivery_address = new Address();
+  
+    console.log("BuyCheckoutPage");
     console.log(this.order);
+    console.log(this.tale);
+    console.log(this.child);
   }
 
   ionViewDidLoad() {

@@ -319,12 +319,17 @@ ion-card {
       opacity: 0.4;
   }
 }
-ion-fab {
-  &[right] {
+ion-col {
+  ion-fab {
+    &[right] {
       margin-right: -10px !important;
-  }
-  &[top] {
+    }
+    &[left] {
+      margin-left: -10px !important;
+    }
+    &[top] {
       margin-top: -10px !important;
+    }
   }
 }
 .scroll-content {
@@ -349,3 +354,14 @@ h2 {
   margin-top: 1.8rem !important;
   margin-bottom: 0;
 }
+ion-item.titolo h2 {
+  margin: 0 !important;
+}
+ion-item.titolo h2 {
+  margin: 0 !important;
+}
+
+ion-item ion-label {
+  margin: 0 !important;
+}
+

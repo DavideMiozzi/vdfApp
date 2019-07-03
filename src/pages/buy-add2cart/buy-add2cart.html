@@ -18,15 +18,12 @@
     <!--trip information-->
     <div class="trip-info card round">
       <div class="trip-image border-bottom" [ngStyle]="{'background-image': 'url(' + this.tale.preview_image + ')'}"></div>
+      <ion-item no-padding class="primary-bg titolo">
+        <h2 io-text text-center class="text-white bold">{{this.tale.title}}</h2>
+      </ion-item>
+      
       <ion-grid no-padding>
         <ion-row>
-          <ion-col col-12>
-              <ion-list no-margin>
-                <ion-item no-padding class="primary-bg">
-                  <h2 io-text text-center class="text-white bold">{{this.tale.title}}</h2>
-                </ion-item>
-              </ion-list>
-          </ion-col>
           <ion-col col-12>
               <ion-item no-padding>
                 <ion-textarea [(ngModel)]="this.inscription" placeholder="{{ 'scrivi dedica' | translate }}" rows="6" maxLength="200" no-margin></ion-textarea>
@@ -34,7 +31,7 @@
               <span class="primary">{{ 200 - this.inscription.length }} / 200</span><br>
             </ion-col>
           <ion-col col-12 margin-top>
-            <button ion-button (click)="createOrder()" class="action-order" large block margin-bottom>Ordina a soli: <b> {{ this.tale.printing_price | currency:'EUR':true }}</b></button>
+            <button ion-button (click)="createOrder()" class="action-order" large block margin-bottom>{{ "Ordina a soli" | translate }}: <b> {{ this.tale.printing_price | currency:'EUR':true }}</b></button>
           </ion-col>
         </ion-row>
       </ion-grid>

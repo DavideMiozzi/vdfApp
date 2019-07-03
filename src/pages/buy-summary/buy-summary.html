@@ -18,17 +18,110 @@
     <!--trip information-->
     <div class="trip-info card round">
       <div class="trip-image border-bottom" [ngStyle]="{'background-image': 'url(' + this.tale.preview_image + ')'}"></div>
-      <ion-grid no-padding>
-        <ion-row margin-top>
-          <button ion-button item-end large block (click)="purchase()">{{ "Paga con Paypal" | translate }}</button>
-        </ion-row>
-      </ion-grid>
+      <ion-item no-padding class="primary-bg titolo">
+        <h2 io-text text-center class="text-white bold">{{this.tale.title}}</h2>
+      </ion-item>
     </div>
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col col-12 no-padding >
+          <h2 class="label-md-primary">Dati di fatturazione</h2>
+        </ion-col>
 
-    <h2>Qua ci va:</h2>
-  <p>1. Anteprima con titolo della favola scelta con dedica</p>
-  <p>2. dati di spedizione</p>
-  <p>3. Dati di fatturazione</p>
-  <p>4. Importo totale da pagare ben visibile e chiaro</p>
-  <p>5. Tasto "Paga con PayPal" bello evidente.</p>
+        <ion-col col-12 no-padding >
+            <ion-item no-padding>
+                <ion-label color="primary" >Pietro todo</ion-label>
+            </ion-item>
+          </ion-col>
+
+          <ion-col col-12 no-padding >
+              <ion-item no-padding>
+                <ion-label color="primary" >p.giarola@todo.todo</ion-label>
+            </ion-item>
+          </ion-col>
+
+          <ion-col col-10 no-padding >
+              <ion-item no-padding>
+              <ion-label color="primary" >Via puttini todo</ion-label>
+            </ion-item>
+          </ion-col>
+    
+          <ion-col col-2 no-padding >
+              <ion-item no-padding>
+              <ion-label color="primary" >11</ion-label>
+            </ion-item>
+          </ion-col>
+    
+          <ion-col col-12 no-padding >
+              <ion-item no-padding>
+              <ion-label color="primary" >Cerea todo</ion-label>
+            </ion-item>
+          </ion-col>
+      
+          <ion-col col-4 no-padding >
+            <ion-item no-padding>
+              <ion-label color="primary" >37053 todo</ion-label>
+            </ion-item>
+          </ion-col>
+    
+          <ion-col col-8 no-padding >
+              <ion-item no-padding>
+              <ion-label color="primary" stacked>Italia</ion-label>
+            </ion-item>
+          </ion-col>
+
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-12 no-padding >
+          <h2 class="label-md-primary">Dati di spedizione</h2>
+        </ion-col>
+
+          <ion-col col-10 no-padding >
+              <ion-item no-padding>
+              <ion-label color="primary" >Via puttini todo</ion-label>
+            </ion-item>
+          </ion-col>
+    
+          <ion-col col-2 no-padding >
+              <ion-item no-padding>
+              <ion-label color="primary" >11</ion-label>
+            </ion-item>
+          </ion-col>
+    
+          <ion-col col-12 no-padding >
+              <ion-item no-padding>
+              <ion-label color="primary" >Cerea todo</ion-label>
+            </ion-item>
+          </ion-col>
+      
+          <ion-col col-4 no-padding >
+            <ion-item no-padding>
+              <ion-label color="primary" >37053 todo</ion-label>
+            </ion-item>
+          </ion-col>
+    
+          <ion-col col-8 no-padding >
+              <ion-item no-padding>
+              <ion-label color="primary" stacked>Italia</ion-label>
+            </ion-item>
+          </ion-col>
+
+      </ion-row>
+
+      <ion-row>
+        <ion-col col-12 no-padding class="ion-text-center" >
+          <h1 class="label-md-primary price">€ 19.00</h1>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+
+
+    <ion-grid no-padding>
+      <ion-row margin-top>
+        <button ion-button item-end large block (click)="purchase()">{{ "Paga con Paypal" | translate }}</button>
+      </ion-row>
+    </ion-grid>
 </ion-content>

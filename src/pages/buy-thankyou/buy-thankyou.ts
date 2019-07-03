@@ -29,13 +29,13 @@ export class BuyThankyouPage {
     this.tale = this.navParams.get('tale');
     this.child = this.navParams.get('child');
     this.order = this.navParams.get('order');
+    console.log("thankyou");
     console.log(this.tale);
     console.log(this.child);
     console.log(this.order);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BuyThankyouPage');
   }
  
   goback() {

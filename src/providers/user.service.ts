@@ -28,8 +28,8 @@ export class UserService {
         this.syncUser();
       } else {
         const value = await this.storage.set("user", JSON.stringify(user));
-        console.log("saved:");
-        console.log(value);
+        // console.log("saved:");
+        // console.log(value);
       }
     }
     catch (error) {

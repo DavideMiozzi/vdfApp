@@ -16,8 +16,14 @@
           <ion-card-header>
 
             <img src="{{tale.preview_image}}" (click)="goToTalePage($event, tale)"/>
+            
             <ion-fab right top>
               <button ion-fab mini (click)="buyTale(tale)">
+                <ion-icon name="cart"></ion-icon>
+              </button>
+            </ion-fab>
+            <ion-fab left top>
+              <button ion-fab mini (click)="goToTalePage($event, tale)">
                 <ion-icon name="book"></ion-icon>
               </button>
             </ion-fab>
