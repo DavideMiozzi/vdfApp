@@ -45,10 +45,10 @@ export class BuyCheckoutPage {
     this.user.billing_address = new Address();
     this.user.delivery_address = new Address();
   
-    console.log("BuyCheckoutPage");
-    console.log(this.order);
-    console.log(this.tale);
-    console.log(this.child);
+    // console.log("BuyCheckoutPage");
+    // console.log(this.order);
+    // console.log(this.tale);
+    // console.log(this.child);
   }
 
   ionViewDidLoad() {
@@ -72,6 +72,8 @@ export class BuyCheckoutPage {
     event.stopPropagation();
     // aggiorna gli indirizzi
     this.userService.updateUser(this.user).subscribe(() => {
+      this.order.user = this.user;
+      this.order.products[0]['print'].tale = this.tale;
       this.navCtrl.push('BuySummaryPage', { order: this.order, tale: this.tale, child: this.child });
     });
   }

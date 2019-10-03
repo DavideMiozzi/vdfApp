@@ -17,9 +17,9 @@
 <ion-content padding class="checkout-trip common-bg">
     <!--trip information-->
     <div class="trip-info card round">
-      <div class="trip-image border-bottom" [ngStyle]="{'background-image': 'url(' + this.tale.preview_image + ')'}"></div>
+      <div class="trip-image border-bottom" [ngStyle]="{'background-image': 'url(' + this.order.products[0].print.tale.preview_image + ')'}"></div>
       <ion-item no-padding class="primary-bg titolo">
-        <h2 io-text text-center class="text-white bold">{{this.tale.title}}</h2>
+        <h2 io-text text-center class="text-white bold">{{this.order.products[0].print.tale.title}}</h2>
       </ion-item>
     </div>
     <ion-grid no-padding>
@@ -30,43 +30,43 @@
 
         <ion-col col-12 no-padding >
             <ion-item no-padding>
-                <ion-label color="primary" >Pietro todo</ion-label>
+                <ion-label color="primary" >{{this.order.user.name}}</ion-label>
             </ion-item>
           </ion-col>
 
           <ion-col col-12 no-padding >
               <ion-item no-padding>
-                <ion-label color="primary" >p.giarola@todo.todo</ion-label>
+                <ion-label color="primary" >{{this.order.user.email}}</ion-label>
             </ion-item>
           </ion-col>
 
           <ion-col col-10 no-padding >
               <ion-item no-padding>
-              <ion-label color="primary" >Via puttini todo</ion-label>
+              <ion-label color="primary" >{{this.order.user.billing_address.street}}</ion-label>
             </ion-item>
           </ion-col>
     
           <ion-col col-2 no-padding >
               <ion-item no-padding>
-              <ion-label color="primary" >11</ion-label>
+              <ion-label color="primary" >{{this.order.user.billing_address.streetNumber}}</ion-label>
             </ion-item>
           </ion-col>
     
           <ion-col col-12 no-padding >
               <ion-item no-padding>
-              <ion-label color="primary" >Cerea todo</ion-label>
+              <ion-label color="primary" >{{this.order.user.billing_address.city}}</ion-label>
             </ion-item>
           </ion-col>
       
           <ion-col col-4 no-padding >
             <ion-item no-padding>
-              <ion-label color="primary" >37053 todo</ion-label>
+              <ion-label color="primary" >{{this.order.user.billing_address.zipCode}}</ion-label>
             </ion-item>
           </ion-col>
     
           <ion-col col-8 no-padding >
               <ion-item no-padding>
-              <ion-label color="primary" stacked>Italia</ion-label>
+              <ion-label color="primary" stacked>{{this.order.user.billing_address.countryName}}</ion-label>
             </ion-item>
           </ion-col>
 
@@ -79,39 +79,39 @@
 
           <ion-col col-10 no-padding >
               <ion-item no-padding>
-              <ion-label color="primary" >Via puttini todo</ion-label>
+              <ion-label color="primary" >{{this.order.user.delivery_address.street}}</ion-label>
             </ion-item>
           </ion-col>
     
           <ion-col col-2 no-padding >
               <ion-item no-padding>
-              <ion-label color="primary" >11</ion-label>
+              <ion-label color="primary" >{{this.order.user.delivery_address.streetNumber}}</ion-label>
             </ion-item>
           </ion-col>
     
           <ion-col col-12 no-padding >
               <ion-item no-padding>
-              <ion-label color="primary" >Cerea todo</ion-label>
+              <ion-label color="primary" >{{this.order.user.delivery_address.city}}</ion-label>
             </ion-item>
           </ion-col>
       
           <ion-col col-4 no-padding >
             <ion-item no-padding>
-              <ion-label color="primary" >37053 todo</ion-label>
+              <ion-label color="primary" >{{this.order.user.delivery_address.zipCode}}</ion-label>
             </ion-item>
           </ion-col>
     
           <ion-col col-8 no-padding >
               <ion-item no-padding>
-              <ion-label color="primary" stacked>Italia</ion-label>
-            </ion-item>
+                <ion-label color="primary" stacked>{{this.order.user.delivery_address.countryName}}</ion-label>
+              </ion-item>
           </ion-col>
 
       </ion-row>
 
       <ion-row>
-        <ion-col col-12 no-padding class="ion-text-center" >
-          <h1 class="label-md-primary price">€ 19.00</h1>
+        <ion-col col-12 no-padding margin-vertical> 
+          <h1 class="label-md-primary price" text-center>{{ this.order.products[0].print.tale.printing_price | currency:'EUR':true }}</h1>
         </ion-col>
       </ion-row>
 

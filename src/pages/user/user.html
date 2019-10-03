@@ -9,45 +9,76 @@
 
 <ion-content>
 
-    <ion-list>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+              <ion-label color="primary" stacked>{{ "Nome" | translate }}</ion-label>
+              <ion-input type="text" [(ngModel)]="user.name" (ngModelChange)="showSave = true"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
-      <ion-item>
-          <ion-label color="primary" stacked>{{ "Nome" | translate }}</ion-label>
-          <ion-input type="text" [(ngModel)]="user.name" (ngModelChange)="showSave = true"></ion-input>
-      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+              <ion-label color="primary" stacked>{{ "Email" | translate }}</ion-label>
+              <ion-input type="email" [(ngModel)]="user.email" (ngModelChange)="showSave = true"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
-      <ion-item>
-          <ion-label color="primary" stacked>{{ "Email" | translate }}</ion-label>
-          <ion-input type="email" [(ngModel)]="user.email" (ngModelChange)="showSave = true"></ion-input>
-      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" stacked>{{ "Indirizzo" | translate }}</ion-label>
+            <ion-input type="text" [(ngModel)]="user.billing_address.street" (ngModelChange)="showSave = true"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
-      <ion-item>
-        <ion-label color="primary" stacked>{{ "Indirizzo" | translate }}</ion-label>
-        <ion-input type="text" [(ngModel)]="user.billing_address.street" (ngModelChange)="showSave = true"></ion-input>
-      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" stacked>{{ "Civico" | translate }}</ion-label>
+            <ion-input type="text" [(ngModel)]="user.billing_address.streetNumber" (ngModelChange)="showSave = true"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
-      <ion-item>
-        <ion-label color="primary" stacked>{{ "Civico" | translate }}</ion-label>
-        <ion-input type="text" [(ngModel)]="user.billing_address.streetNumber" (ngModelChange)="showSave = true"></ion-input>
-      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" stacked>{{ "CAP" | translate }}</ion-label>
+            <ion-input type="text" [(ngModel)]="user.billing_address.zipCode" (ngModelChange)="showSave = true"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
-      <ion-item>
-        <ion-label color="primary" stacked>{{ "CAP" | translate }}</ion-label>
-        <ion-input type="text" [(ngModel)]="user.billing_address.zipCode" (ngModelChange)="showSave = true"></ion-input>
-      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" stacked>{{ "Citta" | translate }}</ion-label>
+            <ion-input type="text" [(ngModel)]="user.billing_address.city" (ngModelChange)="showSave = true"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
-      <ion-item>
-        <ion-label color="primary" stacked>{{ "Citta" | translate }}</ion-label>
-        <ion-input type="text" [(ngModel)]="user.billing_address.city" (ngModelChange)="showSave = true"></ion-input>
-      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label color="primary" stacked>{{ "Provincia" | translate }}</ion-label>
+            <ion-input type="text" [(ngModel)]="user.billing_address.countryName" (ngModelChange)="showSave = true"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
-      <ion-item>
-        <ion-label color="primary" stacked>{{ "Provincia" | translate }}</ion-label>
-        <ion-input type="text" [(ngModel)]="user.billing_address.countryName" (ngModelChange)="showSave = true"></ion-input>
-      </ion-item>
+      <ion-row class="navigation__buttons" margin-top>
+        <ion-col col-12>
+          <button ion-button item-end [disabled]="!showSave" (click)="saveUser()">{{ "Salva" | translate }}</button>
+        </ion-col>
+      </ion-row>
 
-      <button ion-button item-end [hidden]="!showSave" (click)="saveUser()">{{ "Salva" | translate }}</button>
-
-    </ion-list>
+    </ion-grid>
 
 </ion-content>

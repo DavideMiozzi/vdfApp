@@ -15,9 +15,21 @@
 
 
 <ion-content padding>
-  <h2>Qua ci va:</h2>
-  <p>1. Check tontdo grande che dice OK o KO (a mo di SweetModal: https://sweet-modal.adepto.as/)</p>
-  <p>2. tasto torna indietro</p>
+
+    <div class="result-badge success" *ngIf="this.result"  >
+        <ion-icon name="checkmark"></ion-icon>
+    </div>
+    <h2 *ngIf="this.result" >
+      Grazie!<br>
+      Abbiamo ricevuto il tuo ordine, ancora qualche giorno e potrai immergerti in un'avventura strepitosa!!
+    </h2>
+
+    <div class="result-badge danger" *ngIf="!this.result" >
+        <ion-icon name="close"></ion-icon>
+    </div>
+    <div ion-text-center>
+      <h2 *ngIf="!this.result"  >Ooops... Qualcosa è andato storto.</h2>
+    </div>
 
   <button ion-button (click)="gotoNextPage()">torna indietro</button>
 </ion-content>

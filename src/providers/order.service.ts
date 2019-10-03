@@ -47,6 +47,17 @@ export class OrderService {
       .then((orderFromServer) => this.storeOrder(orderFromServer))
   }
 
+  getOrder(order_id): Promise<Order> {
+    if (this.network.isConnected()) {
+      return this.http.get<Order>(this.APIbaseUrl+`orders/${order_id}`)
+      .toPromise()
+      .then((orderFromServer) => this.storeOrder(orderFromServer))
+    } else {
+      return this.getOrderFromStorage()
+      .then(() => this.storage.set("order_modified_offline", "true"))
+    }
+  }
+
   confirmOrderPayment(order, paypal_result): Promise<any> {
     return this.http.post(this.APIbaseUrl+"orders/process_payment/"+ order.id, "")
       .toPromise()

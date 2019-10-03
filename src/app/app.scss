@@ -365,3 +365,27 @@ ion-item ion-label {
   margin: 0 !important;
 }
 
+.result-badge {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 25%;
+  ion-icon {
+    margin: auto;
+    font-size: 13rem;
+    line-height: 190px;
+  }
+  &.success {
+    border: .25em solid rgba(115, 207, 61,.3);
+    color: rgb(115, 207, 61);
+  }
+  &.danger {
+    border: .25em solid rgba(245, 61, 61,.3);
+    color: rgb(245, 61, 61);
+  }
+}
+
+.navigation__buttons .button { text-align: center; width: 100%; }

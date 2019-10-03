@@ -20,8 +20,8 @@ import { Order } from '../../models/order';
 export class BuyThankyouPage {
   tale: Tale;
   child: Child;
-  inscription: string;
   order: Order;
+  result: boolean;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
@@ -29,10 +29,7 @@ export class BuyThankyouPage {
     this.tale = this.navParams.get('tale');
     this.child = this.navParams.get('child');
     this.order = this.navParams.get('order');
-    console.log("thankyou");
-    console.log(this.tale);
-    console.log(this.child);
-    console.log(this.order);
+    this.result = this.navParams.get('result');
   }
 
   ionViewDidLoad() {
