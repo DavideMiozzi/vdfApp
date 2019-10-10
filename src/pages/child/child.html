@@ -14,7 +14,7 @@
     <ion-row>
         <ion-col>
           <ion-item no-padding>
-            <ion-label color="primary" stacked>{{ "Nome" | translate }}</ion-label>
+            <ion-label  stacked>{{ "Nome" | translate }}</ion-label>
             <ion-input [(ngModel)]="child.name" (ngModelChange)="newValue()"></ion-input>
           </ion-item>
         </ion-col>
@@ -22,7 +22,7 @@
     <ion-row>
         <ion-col>
           <ion-item no-padding>
-            <ion-label color="primary" stacked>{{ "Data di nascita" | translate }}</ion-label>
+            <ion-label  stacked>{{ "Data di nascita" | translate }}</ion-label>
             <ion-datetime displayFormat="MM DD YYYY" [(ngModel)]="birthday" (ngModelChange)="newValue()"></ion-datetime>
           </ion-item>
         </ion-col>
@@ -58,37 +58,37 @@
     </ion-row>
     <ion-row>
       <ion-item>
-        <ion-label color="primary" stacked>{{ "Nome Papà" | translate }}:</ion-label>
+        <ion-label  stacked>{{ "Nome Papà" | translate }}:</ion-label>
         <ion-input [(ngModel)]="dadName" (ngModelChange)="newValue()"></ion-input>
       </ion-item>
     </ion-row>
     <ion-row>
       <ion-item>
-        <ion-label color="primary" stacked>{{ "Nome Mamma" | translate }}:</ion-label>
+        <ion-label  stacked>{{ "Nome Mamma" | translate }}:</ion-label>
         <ion-input [(ngModel)]="momName" (ngModelChange)="newValue()"></ion-input>
       </ion-item>
     </ion-row>
     <ion-row>
       <ion-item>
-        <ion-label color="primary" stacked>{{ child.sex == "girl" ? ("Nome Amica del cuore" | translate) : ("Nome Amico del cuore" | translate) }}:</ion-label>
+        <ion-label  stacked>{{ child.sex == "girl" ? ("Nome Amica del cuore" | translate) : ("Nome Amico del cuore" | translate) }}:</ion-label>
         <ion-input [(ngModel)]="bestFriendName" (ngModelChange)="newValue()"></ion-input>
       </ion-item>
     </ion-row>
     <ion-row>
       <ion-item>
-        <ion-label color="primary" stacked>{{ "Nome Cane" | translate }}:</ion-label>
+        <ion-label  stacked>{{ "Nome Cane" | translate }}:</ion-label>
         <ion-input [(ngModel)]="dogName" (ngModelChange)="newValue()"></ion-input>
       </ion-item>
     </ion-row>
     <ion-row>
       <ion-item>
-        <ion-label color="primary" stacked>{{ "Nome Nonno" | translate }}:</ion-label>
+        <ion-label  stacked>{{ "Nome Nonno" | translate }}:</ion-label>
         <ion-input [(ngModel)]="grandPaName" (ngModelChange)="newValue()"></ion-input>
       </ion-item>
     </ion-row>
     <ion-row>
       <ion-item>
-        <ion-label color="primary" stacked>{{ "Nome Nonna" | translate }}:</ion-label>
+        <ion-label  stacked>{{ "Nome Nonna" | translate }}:</ion-label>
         <ion-input [(ngModel)]="grandMaName" (ngModelChange)="newValue()"></ion-input>
       </ion-item>
     </ion-row>

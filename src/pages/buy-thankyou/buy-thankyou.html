@@ -20,16 +20,29 @@
         <ion-icon name="checkmark"></ion-icon>
     </div>
     <h2 *ngIf="this.result" >
-      Grazie!<br>
-      Abbiamo ricevuto il tuo ordine, ancora qualche giorno e potrai immergerti in un'avventura strepitosa!!
+      {{ "Grazie!" | translate }}<br>
+      {{ "Ordine N°" | translate }}<br>
+    </h2>
+    <ion-item no-padding text-wrap text-center class="primary-bg titolo">
+        <h2 io-text class="text-white bold">{{this.order.id}}</h2>
+    </ion-item>
+
+    <h2>
+      {{ "Ancora qualche giorno di pazienza e potrai immergerti in un'avventura strepitosa!!" | translate }}
     </h2>
 
     <div class="result-badge danger" *ngIf="!this.result" >
         <ion-icon name="close"></ion-icon>
     </div>
     <div ion-text-center>
-      <h2 *ngIf="!this.result"  >Ooops... Qualcosa è andato storto.</h2>
+      <h2 *ngIf="!this.result"  >{{ "Ooops... Qualcosa è andato storto." | translate }}</h2>
     </div>
 
-  <button ion-button (click)="gotoNextPage()">torna indietro</button>
+  <ion-grid>
+    <ion-row margin-top>
+      <button ion-button item-end large block (click)="gotoNextPage()">{{ "Torna indietro" | translate }}</button>
+    </ion-row>
+  </ion-grid>
+
+  
 </ion-content>

@@ -18,21 +18,21 @@
     <!--trip information-->
     <div class="trip-info card round">
       <div class="trip-image border-bottom" [ngStyle]="{'background-image': 'url(' + this.tale.preview_image + ')'}"></div>
-      <ion-item no-padding class="primary-bg titolo">
-        <h2 io-text text-center class="text-white bold">{{this.tale.title}}</h2>
+      <ion-item no-padding text-wrap text-center class="primary-bg titolo">
+        <h2 io-text class="text-white bold">{{this.tale.title}}</h2>
       </ion-item>
       <ion-grid no-padding>
         <ion-row>
             <ion-col col-12 no-padding >
               <ion-item no-padding>
-                  <ion-label color="primary" stacked>{{ "Nome" | translate }}</ion-label>
+                  <ion-label stacked>{{ "Nome" | translate }}</ion-label>
                   <ion-input type="text" [(ngModel)]="this.user.name"></ion-input>
               </ion-item>
             </ion-col>
 
             <ion-col col-12 no-padding >
                 <ion-item no-padding>
-                  <ion-label color="primary" stacked>{{ "Email" | translate }}</ion-label>
+                  <ion-label stacked>{{ "Email" | translate }}</ion-label>
                   <ion-input type="email" [(ngModel)]="this.user.email"></ion-input>
               </ion-item>
             </ion-col>
@@ -43,35 +43,35 @@
 
             <ion-col col-10 no-padding >
                 <ion-item no-padding>
-                <ion-label color="primary" stacked>{{ "Indirizzo" | translate }}</ion-label>
+                <ion-label stacked>{{ "Indirizzo" | translate }}</ion-label>
                 <ion-input type="text" [(ngModel)]="this.user.billing_address.street"></ion-input>
               </ion-item>
             </ion-col>
       
             <ion-col col-2 no-padding >
                 <ion-item no-padding>
-                <ion-label color="primary" stacked>{{ "Civico" | translate }}</ion-label>
+                <ion-label stacked>{{ "Civico" | translate }}</ion-label>
                 <ion-input type="text" [(ngModel)]="this.user.billing_address.streetNumber"></ion-input>
               </ion-item>
             </ion-col>
       
             <ion-col col-12 no-padding >
                 <ion-item no-padding>
-                <ion-label color="primary" stacked>{{ "Citta" | translate }}</ion-label>
+                <ion-label stacked>{{ "Citta" | translate }}</ion-label>
                 <ion-input type="text" [(ngModel)]="this.user.billing_address.city"></ion-input>
               </ion-item>
             </ion-col>
         
             <ion-col col-4 no-padding >
               <ion-item no-padding>
-                <ion-label color="primary" stacked>{{ "CAP" | translate }}</ion-label>
+                <ion-label stacked>{{ "CAP" | translate }}</ion-label>
                 <ion-input type="text" [(ngModel)]="this.user.billing_address.zipCode"></ion-input>
               </ion-item>
             </ion-col>
       
             <ion-col col-8 no-padding >
                 <ion-item no-padding>
-                <ion-label color="primary" stacked>{{ "Provincia" | translate }}</ion-label>
+                <ion-label stacked>{{ "Provincia" | translate }}</ion-label>
                 <ion-input type="text" [(ngModel)]="this.user.billing_address.countryName"></ion-input>
               </ion-item>
             </ion-col>
@@ -85,35 +85,35 @@
 
           <ion-col col-10 no-padding >
               <ion-item no-padding>
-              <ion-label color="primary" stacked>{{ "Indirizzo" | translate }}</ion-label>
+              <ion-label stacked>{{ "Indirizzo" | translate }}</ion-label>
               <ion-input type="text" [(ngModel)]="this.user.delivery_address.street"></ion-input>
             </ion-item>
           </ion-col>
     
           <ion-col col-2 no-padding >
               <ion-item no-padding>
-              <ion-label color="primary" stacked>{{ "Civico" | translate }}</ion-label>
+              <ion-label stacked>{{ "Civico" | translate }}</ion-label>
               <ion-input type="text" [(ngModel)]="this.user.delivery_address.streetNumber"></ion-input>
             </ion-item>
           </ion-col>
     
           <ion-col col-12 no-padding >
               <ion-item no-padding>
-              <ion-label color="primary" stacked>{{ "Citta" | translate }}</ion-label>
+              <ion-label stacked>{{ "Citta" | translate }}</ion-label>
               <ion-input type="text" [(ngModel)]="this.user.delivery_address.city"></ion-input>
             </ion-item>
           </ion-col>
       
           <ion-col col-4 no-padding >
             <ion-item no-padding>
-              <ion-label color="primary" stacked>{{ "CAP" | translate }}</ion-label>
+              <ion-label stacked>{{ "CAP" | translate }}</ion-label>
               <ion-input type="text" [(ngModel)]="this.user.delivery_address.zipCode"></ion-input>
             </ion-item>
           </ion-col>
     
           <ion-col col-8 no-padding >
               <ion-item no-padding>
-              <ion-label color="primary" stacked>{{ "Provincia" | translate }}</ion-label>
+              <ion-label stacked>{{ "Provincia" | translate }}</ion-label>
               <ion-input type="text" [(ngModel)]="this.user.delivery_address.countryName"></ion-input>
             </ion-item>
           </ion-col>

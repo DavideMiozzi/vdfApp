@@ -18,8 +18,8 @@
     <!--trip information-->
     <div class="trip-info card round">
       <div class="trip-image border-bottom" [ngStyle]="{'background-image': 'url(' + this.order.products[0].print.tale.preview_image + ')'}"></div>
-      <ion-item no-padding class="primary-bg titolo">
-        <h2 io-text text-center class="text-white bold">{{this.order.products[0].print.tale.title}}</h2>
+      <ion-item no-padding text-wrap text-center class="primary-bg titolo">
+        <h2 io-text class="text-white bold">{{this.order.products[0].print.tale.title}}</h2>
       </ion-item>
     </div>
     <ion-grid no-padding>

@@ -15,4 +15,7 @@ page-children {
 		bottom: 15px;
 		right: 15px;
 	}
+	h2 {
+		color: color($colors, primary, base);
+	}
 }
