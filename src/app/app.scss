@@ -53,7 +53,8 @@ ion-icon { color: primary; }
 	border-color: #fff;
 }
 .toolbar-title-md {
-	color: color($colors, primary, base) !important;
+  color: color($colors, primary, base) !important;
+  font-size: 4rem;
 }
 .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before { 
 	background-image: url("../assets/imgs/cornicetta.png");
@@ -398,5 +399,21 @@ ion-label {
   color: color($colors, secondary, base);
 }
 ion-menu ion-label {
-  font-size: large;
+  font-size: 3rem;
+  color: color($colors, primary, base);
+}
+ion-menu .item-block {
+  min-height: 5.4rem;
+}
+.order-list ion-item {
+  padding-left: 0;
+}
+.order-list .title {
+  font-size: 2rem;
+  color: color($colors, primary, base);
+  margin: 2px !important;
+}
+.order-list .state, .order-list .date {
+  font-size: 1.6rem;
+  margin-right: 5px;
 }

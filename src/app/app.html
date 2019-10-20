@@ -1,7 +1,7 @@
 <ion-menu [content]="sidemenu">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Qua va il nome utente</ion-title>
+      <ion-title>{{this.userName}}</ion-title>
       <!-- <button ion-button menuClose>X</button> -->
     </ion-toolbar>
   </ion-header>
@@ -10,8 +10,11 @@
       <ion-item menuClose (click)="openPage('UserPage')">
         <ion-icon name="person"></ion-icon> {{ "Profilo" | translate }}
       </ion-item>
-      <button ion-item menuClose (click)="logout()">
-        <ion-icon name="exit"></ion-icon> {{ "Esci" | translate }}
+      <ion-item menuClose (click)="openPage('OrdersPage')">
+        <ion-icon name="cart"></ion-icon> {{ "Ordini" | translate }}
+      </ion-item>
+        <button ion-item menuClose (click)="logout()">
+          <ion-icon name="exit"></ion-icon> {{ "Esci" | translate }}
       </button>
     </ion-list>
   </ion-content>
