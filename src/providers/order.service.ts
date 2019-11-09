@@ -58,6 +58,16 @@ export class OrderService {
     }
   }
 
+  getOrders(): Promise<Order[]> {
+    if (this.network.isConnected()) {
+      return this.http.get<Order[]>(this.APIbaseUrl+`orders/index_by_user`)
+      .toPromise()
+      .then((ordersFromServer) => this.storeOrders(ordersFromServer))
+    } else {
+      return this.getOrdersFromStorage()
+    }
+  }
+
   confirmOrderPayment(order, paypal_result): Promise<any> {
     return this.http.post(this.APIbaseUrl+"orders/process_payment/"+ order.id, "")
       .toPromise()
@@ -82,6 +92,18 @@ export class OrderService {
   private storeOrder(order): Promise<Order> {
     return this.storage.set("order", JSON.stringify(order))
     .then(()=> order)
+    .catch(error => console.log(error));
+  }
+
+  private getOrdersFromStorage(): Promise<Order[]> {
+    return this.storage.get(`orders`)
+    .then((orderData) => JSON.parse(orderData))
+    .catch((error) => console.log('error retrieving order from storage', error))
+  }
+
+  private storeOrders(orders): Promise<Order[]> {
+    return this.storage.set("order", JSON.stringify(orders))
+    .then(()=> orders)
     .catch(error => console.log(error));
   }
 }

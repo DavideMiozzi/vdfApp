@@ -15,85 +15,20 @@
 
 
 <ion-content>
-    <ion-list class="order-list with-wave">
-      <ion-item>
+  <ion-list class="order-list with-wave">
+    <ion-item *ngFor="let order of orders">
         <ion-thumbnail item-start>
           <img src="assets/imgs/preview-storia.png">
         </ion-thumbnail>
         <h2 text-wrap class="title" color="primary">
-            MICHELINO E LA LUNA
+          {{order.tale.title}}
         </h2>
         <p>
-          <span class="date">01/10/2019</span>
+          <span class="date">data</span>
           <span class="state">in attesa di pagamento</span>
         </p>
   
         <ion-icon name="logo-euro" color="warning" clear item-end></ion-icon>
-      </ion-item>
-
-
-      <ion-item>
-          <ion-thumbnail item-start>
-            <img src="assets/imgs/preview-storia.png">
-          </ion-thumbnail>
-          <h2 text-wrap class="title" color="primary">
-              MICHELINO E LA LUNA
-          </h2>
-          <p>
-            <span class="date">01/09/2019</span>
-            <span class="state">Pagamento accettato stiamo preparando la stampa</span>
-          </p>
-        <ion-icon name="ios-thumbs-up" color="success" clear item-end></ion-icon>
-      </ion-item>
-
-
-      <ion-item>
-          <ion-thumbnail item-start>
-            <img src="assets/imgs/preview-storia.png">
-          </ion-thumbnail>
-          <h2 text-wrap class="title" color="primary">
-              MICHELINO E LA LUNA
-          </h2>
-          <p>
-              <span class="date">01/08/2019</span>
-              <span class="state">In stampa</span>
-            </p>
-    
-          <ion-icon name="print" color="info" clear item-end></ion-icon>
-        </ion-item>
-
-
-        <ion-item>
-          <ion-thumbnail item-start>
-            <img src="assets/imgs/preview-storia.png">
-          </ion-thumbnail>
-          <h2 text-wrap class="title" color="primary">
-              MICHELINO E LA LUNA
-          </h2>
-          <p>
-              <span class="date">01/07/2019</span>
-              <span class="state">Spedito</span>
-            </p>
-    
-          <ion-icon name="send" color="success" clear item-end></ion-icon>
-        </ion-item>
-
-
-        <ion-item>
-            <ion-thumbnail item-start>
-              <img src="assets/imgs/preview-storia.png">
-            </ion-thumbnail>
-            <h2 text-wrap class="title" color="primary">
-                MICHELINO E LA LUNA
-            </h2>
-            <p>
-                <span class="date">01/06/2019</span>
-                <span class="state">Annullato</span>
-              </p>
-      
-            <ion-icon name="close-circle" color="danger" clear item-end></ion-icon>
-          </ion-item>
-                                          
-
-        </ion-list>
-    </ion-content>
+    </ion-item>
+  </ion-list>
+</ion-content>
