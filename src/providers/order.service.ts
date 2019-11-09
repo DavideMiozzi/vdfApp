@@ -60,7 +60,7 @@ export class OrderService {
 
   getOrders(): Promise<Order[]> {
     if (this.network.isConnected()) {
-      return this.http.get<Order[]>(this.APIbaseUrl+`orders/index_by_user`)
+      return this.http.get<Order[]>(this.APIbaseUrl+`orders_by_user`)
       .toPromise()
       .then((ordersFromServer) => this.storeOrders(ordersFromServer))
     } else {
