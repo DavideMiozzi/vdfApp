@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TranslateService } from '@ngx-translate/core';
 
-import { Order } from '../../models/order';
+import { Order, Product } from '../../models/order';
+import { Tale } from '../../models/tale';
 import { OrderService } from '../../providers';
 
 
@@ -21,7 +23,10 @@ export class OrdersPage {
 
   orders: Order[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private orderService: OrderService) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              private orderService: OrderService, 
+              public translate:TranslateService) {
   }
 
   ionViewDidLoad() {
@@ -29,9 +34,20 @@ export class OrdersPage {
   }
 
   ionViewWillEnter() {
+    const env = this;
+    env.orders = []; 
     this.orderService.getOrders().then((orders) => { 
       console.log(orders);
-      this.orders = orders; 
+      orders.forEach((obj) => {
+        let order = Object.assign(new Order(), obj);
+        order.products.forEach((product) => {
+          product = Object.assign(new Product(), product);
+          // product.print.tale = Object.assign(new Tale(), product.print.tale);
+          product.customize();
+        });
+        env.orders.unshift(order);
+      });
+      console.log(env.orders);
     });
   }
 

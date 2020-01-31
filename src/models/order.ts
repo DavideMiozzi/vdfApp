@@ -9,20 +9,49 @@ export class Print {
   child: Child;
   tale: Tale;
 
-  constructor(child_id, tale_id, inscription) {
+  constructor(child_id = null, tale_id = null, inscription = null) {
     this.child_id = child_id;
     this.tale_id = tale_id;
     this.inscription = inscription;
+  }
+
+  public customize() {
+    this.tale = Object.assign(new Tale(), this.tale);
+    this.tale.customizeTitle(this.child);
+  }
+}
+
+export class Product {
+  print: Print;
+
+  constructor() {
+  }
+
+  public customize() {
+    this.print = Object.assign(new Print(), this.print);
+    this.print.customize();
   }
 }
 
 export class Order {
   id: number;
+  status: string;
+  updated_at: string;
   prints: Print[];
-  products: Object[];
+  products: Product[];
   user: User;
 
   constructor() {
     this.prints = [];
+    this.products = [];
+  }
+
+  public customize() {
+    this.products.forEach((product) => {
+      product.customize();
+    });
+    this.prints.forEach((print) => {
+      print.customize();
+    });
   }
 }

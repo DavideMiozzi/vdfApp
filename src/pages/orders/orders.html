@@ -18,14 +18,16 @@
   <ion-list class="order-list with-wave">
     <ion-item *ngFor="let order of orders">
         <ion-thumbnail item-start>
-          <img src="assets/imgs/preview-storia.png">
+          <img src="{{order.products[0]?.print?.tale?.preview_image}}">
         </ion-thumbnail>
         <h2 text-wrap class="title" color="primary">
-          titoli
+          {{order.products[0]?.print?.tale?.title}}
         </h2>
         <p>
-          <span class="date">data</span>
-          <span class="state">in attesa di pagamento</span>
+          <span class="date">
+            {{order.updated_at | date: 'dd/MM/yyyy' }}
+          </span>
+          <span class="state">{{ order.status | translate }}</span>
         </p>
   
         <ion-icon name="logo-euro" color="warning" clear item-end></ion-icon>
